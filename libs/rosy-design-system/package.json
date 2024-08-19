@@ -1,5 +1,5 @@
 {
-  "name": "@rosy-design-system/rosy-design-system/my-lib",
+  "name": "@rosy-design-system/rosy-design-system",
   "version": "0.0.1",
   "dependencies": {},
   "main": "./index.js",

@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rosy-design-system/rosy-design-system/my-lib": [
-        "libs/rosy-design-system/my-lib/src/index.ts"
+      "@rosy-design-system/rosy-design-system": [
+        "libs/rosy-design-system/src/index.ts"
       ]
     }
   },
