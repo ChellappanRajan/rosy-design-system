@@ -1,5 +1,5 @@
 {
-  "name": "rosy-design-system",
+  "name": "rosy-design-system-app",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/rosy-design-system/src",
   "projectType": "library",

@@ -2,7 +2,9 @@
   "name": "@rosy-design-system/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "ng-dev": "npx nx run rosy-design-system:serve"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",
@@ -13,6 +15,7 @@
     "@angular/platform-browser": "~18.2.0",
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
+    "lit": "^3.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
