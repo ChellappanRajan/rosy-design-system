@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
-
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RosyShimmerLoader} from '@rosy-design-system/rosy-design-system';
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'rosy-design-system';
+  constructor(){
+  console.log(RosyShimmerLoader);
+  }
 }
