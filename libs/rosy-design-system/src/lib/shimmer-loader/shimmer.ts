@@ -2,17 +2,50 @@ import { css } from "lit";
 
 export const styles = css`
 :host{
+  --rosy-border-rounded-none:0px;
+
+  --rosy-border-rounded-full:9999px;
+
+  --rosy-border-rounded-:0px;
+
+  --rosy-border-rounded-none:0px;
+
   --rosy-shimmer-loader-width:300px;
   --rosy-shimmer-loader-height:75px;
   --width:var(--rosy-shimmer-loader-width);
   --height:var(--rosy-shimmer-loader-height);
 }
+
+
+:host([shape="rounded-full"]){
+  & .shimmer-box{
+  border-radius:9999px;
+  }
+}
+
+:host([shape="rounded"]){
+    & .shimmer-box{
+    border-radius: .25rem;
+    }
+}
+
+:host([shape="rounded-md"]){
+    & .shimmer-box{
+    border-radius: .375rem;
+    }
+}
+
+:host([shape="rounded-lg"]){
+    & .shimmer-box{
+    border-radius: .5rem;
+    }
+}
+
 .shimmer-box {
   width: var(--width);
   height: var(--height);
 }
-.animation {
-  background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+.animation { background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
   /* add the following line: */
   background-attachment: fixed;
   background-size: 300%;
