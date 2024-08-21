@@ -11,8 +11,6 @@ export class RosyShimmerLoader extends LitElement {
 
 
   override render() {
-    // const classes = { [this.shape]:true };
-
     return html`<div class="shimmer-box animation"></div>`;
   }
 }
