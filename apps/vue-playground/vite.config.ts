@@ -17,8 +17,12 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [vue(), nxViteTsPaths()],
-
+  plugins: [vue(),  nxViteTsPaths()],
+  //Without adding this esbuild standard decorator not working
+  //and need to set  "useDefineForClassFields": true in tsconfig.ts
+  esbuild: {
+    target: 'es2021',
+  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

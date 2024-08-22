@@ -5,6 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "jsx": "preserve",
+    "useDefineForClassFields": true,
     "jsxImportSource": "vue",
     "moduleResolution": "node",
     "resolveJsonModule": true
