@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import NxWelcome from './NxWelcome.vue';
+  import Shimmer from './Shimmer.vue';
 </script>
 
 <template>
-  <NxWelcome title="vue-playground" />
+  <Shimmer></Shimmer>
 </template>
+

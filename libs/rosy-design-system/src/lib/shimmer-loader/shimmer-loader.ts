@@ -1,7 +1,6 @@
 import {html,LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {styles} from './shimmer';
-// import {classMap} from 'lit/directives/class-map.js';
 
 @customElement('rosy-shimmer-loader')
 export class RosyShimmerLoader extends LitElement {
