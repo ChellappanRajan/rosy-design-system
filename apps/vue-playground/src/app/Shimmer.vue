@@ -22,3 +22,31 @@ import '@rosy-design-system/rosy-design-system';
 </div>
 </template>
 
+<style>
+.gray {
+  background-color: #e2e2e2;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.short-row {
+  height: 30px;
+  flex: 1;
+  border-radius: 8px;
+}
+
+.body-box {
+  margin-top: 12px;
+  width: 342px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.container {
+  display: inline-block;
+}
+</style>
