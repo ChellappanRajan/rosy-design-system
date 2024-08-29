@@ -2,6 +2,7 @@ import { css } from "lit";
 
 export const styles = css`
 :host{
+  display:contents;
   --rosy-border-rounded-none:0px;
 
   --rosy-border-rounded-full:9999px;
@@ -10,7 +11,7 @@ export const styles = css`
 
   --rosy-border-rounded-none:0px;
 
-  --rosy-shimmer-loader-width:300px;
+  --rosy-shimmer-loader-width:100px;
   --rosy-shimmer-loader-height:75px;
   --width:var(--rosy-shimmer-loader-width);
   --height:var(--rosy-shimmer-loader-height);
@@ -45,7 +46,11 @@ export const styles = css`
   width: var(--width);
   height: var(--height);
 }
-.animation { background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+.animation {
+  // background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+  background:
+    linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%)
+    right/300% 100%;
   /* add the following line: */
   background-attachment: fixed;
   background-size: 300%;
