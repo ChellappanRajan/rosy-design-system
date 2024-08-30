@@ -1,8 +1,8 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RosyShimmerLoader} from '@rosy-design-system/rosy-design-system';
+import {SimmerExampleComponent} from './shimmer.component';
 @Component({
   standalone: true,
-  imports: [],
+  imports: [SimmerExampleComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +10,5 @@ import { RosyShimmerLoader} from '@rosy-design-system/rosy-design-system';
 })
 export class AppComponent {
   constructor(){
-  console.log(RosyShimmerLoader);
   }
 }

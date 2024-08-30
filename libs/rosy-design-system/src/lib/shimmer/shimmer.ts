@@ -1,9 +1,9 @@
 import {html,LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {styles} from './shimmer';
+import {styles} from './shimmer.css';
 
 @customElement('rosy-shimmer-loader')
-export class RosyShimmerLoader extends LitElement {
+export class ShimmerLoader extends LitElement {
   static override styles = styles;
 
 /**
