@@ -14,7 +14,6 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudAccessToken": "ZTA4ZmRmYjctYjMzYi00N2VmLWIxOWItYzc1MTk0M2Y1NTJkfHJlYWQtd3JpdGU=",
   "targetDefaults": {
     "@angular-devkit/build-angular:application": {
       "cache": true,
