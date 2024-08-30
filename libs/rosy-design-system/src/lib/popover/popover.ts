@@ -1,13 +1,46 @@
 
 import {html,LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement, property, queryAssignedElements, queryAssignedNodes} from 'lit/decorators.js';
 import {styles} from './popover.css';
 
 @customElement('rosy-popover')
 export class Popover extends LitElement {
   static override styles = styles;
 
+
+  @property({reflect:true,type:String}) accessor position = 'center-right';
+
+  @property({type:String}) override accessor title!:string;
+
+
   override render() {
-    return html`<h1>Popover Test</h1>`;
+    return html`
+      <div>
+      <slot name="trigger">
+        <button popovertarget="popover"  class="btn">i</button>
+      </slot>
+
+      <div class="popover" popover id="popover">
+          <header class="header">
+            <slot name="title">
+              <h2>${this.title}</h2>
+            </slot>
+            <button class="close-button">
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </button>
+          </header>
+          <main>
+          <slot name="body">
+              Greetings, one and all!
+          </slot>
+          </main>
+          <footer>
+          <slot name="footer">
+            Hello footer
+          </slot>
+          </footer>
+        </div>
+      </div>
+    `;
   }
 }
