@@ -3,20 +3,27 @@ import {css} from 'lit';
 
 export const styles = css`
 .btn{
-  anchor-name: --popover-trigger-element;
+  width: fit-content;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, .15), 0 1px 3px rgba(0, 0, 0, .3);
+    background: white;
+    padding: 0.25rem 1rem;
+    anchor-name: --popover-trigger-element;
 }
-::backdrop {
-  // background: rgba(0, 0, 0, 0.5);
-  // backdrop-filter: blur(3px);
+svg{
+    width: 20px;
+    height: 20px;
 }
+
+
 :popover-open {
-  min-width: 360px;
   box-shadow: 0 2px 6px 2px rgba(0, 0, 0, .15), 0 1px 2px 0 rgba(0, 0, 0, .3);
   margin:0;
   height:100px;
-  // background-color:#e9eef6;
   background-color:#fff;
   display: flex;
+  max-width: 200px;
   padding: 1rem;
   height:100px;
   border:none;
@@ -25,8 +32,6 @@ export const styles = css`
   flex-direction:column;
   gap:0.5rem;
   border-radius:10px;
-//   bottom:anchor(--popover-trigger-element top);
-//   right:anchor(--popover-trigger-element right);
   position-anchor:--popover-trigger-element;
 }
 :host([position="center-right"]){
@@ -54,6 +59,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+p{
+margin:0;
 }
 `;
 
