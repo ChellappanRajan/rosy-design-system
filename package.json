@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng-dev": "npx nx run rosy-design-system:serve",
+    "ng-test": "npx nx run rosy-design-system-e2e:e2e",
+    "target-check":"npx nx show project rosy-design-system-e2e --web",
     "vue-dev":"npx nx run vue-playground:serve"
   },
   "private": true,
