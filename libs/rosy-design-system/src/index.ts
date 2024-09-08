@@ -2,3 +2,9 @@ export * from './lib/rosy-design-system-my-lib';
 
 export * from './lib/shimmer/shimmer';
 export * from './lib/popover/popover';
+export * from './lib/table/table-head';
+export * from './lib/table/table-foot';
+export * from './lib/table/table-row';
+export * from './lib/table/table-cell';
+export * from './lib/table/table-body';
+export * from './lib/table/table';
