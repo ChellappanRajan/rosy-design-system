@@ -5,8 +5,23 @@
   "scripts": {
     "ng-dev": "npx nx run rosy-design-system:serve",
     "ng-test": "npx nx run rosy-design-system-e2e:e2e",
-    "target-check":"npx nx show project rosy-design-system-e2e --web",
-    "vue-dev":"npx nx run vue-playground:serve"
+    "target-check": "npx nx show project rosy-design-system-e2e --web",
+    "vue-dev": "npx nx run vue-playground:serve",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "lint:eslint": "eslint --ext .ts,.html . --ignore-path .gitignore",
+    "format:eslint": "eslint --ext .ts,.html . --fix --ignore-path .gitignore",
+    "lint:prettier": "prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.ts\" --write --ignore-path .gitignore"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +60,7 @@
     "@nx/vue": "19.6.2",
     "@nx/web": "19.6.2",
     "@nx/workspace": "19.6.1",
+    "@open-wc/eslint-config": "^12.0.3",
     "@playwright/test": "^1.36.0",
     "@schematics/angular": "~18.2.0",
     "@swc-node/register": "~1.9.1",
@@ -62,7 +78,7 @@
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/test-utils": "^2.4.1",
     "eslint": "~8.57.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-playwright": "^0.15.3",
     "eslint-plugin-vue": "^9.16.1",
     "jest": "^29.7.0",
@@ -70,7 +86,7 @@
     "jest-preset-angular": "~14.1.0",
     "jsdom": "~22.1.0",
     "nx": "19.6.1",
-    "prettier": "^2.6.2",
+    "prettier": "^2.8.8",
     "sass": "1.62.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
