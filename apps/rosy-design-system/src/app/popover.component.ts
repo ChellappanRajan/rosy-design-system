@@ -6,9 +6,7 @@ import { Popover } from '@rosy-design-system/rosy-design-system';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-popover-example',
   template: `
-    <div
-      class="center"
-    >
+    <div class="center">
       <select (change)="onChange($event)">
         <option value="top">Top</option>
         <option value="bottom">Bottom</option>

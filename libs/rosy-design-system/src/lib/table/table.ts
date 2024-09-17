@@ -1,11 +1,9 @@
-
-import {html,LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import { html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { styles } from './table.css';
 
 @customElement('rosy-table')
 export class Table extends LitElement {
-
   static override styles = styles;
 
   override connectedCallback(): void {
@@ -13,8 +11,7 @@ export class Table extends LitElement {
     this.setAttribute('role', 'table');
   }
 
-
-   override render(){
+  override render() {
     return html`<slot></slot>`;
-    }
+  }
 }

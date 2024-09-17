@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
 export const styles = css`
-:host{
-  display:table-row;
-}
+  :host {
+    display: table-row;
+  }
 `;
