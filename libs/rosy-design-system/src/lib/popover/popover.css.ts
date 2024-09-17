@@ -48,6 +48,9 @@ export const styles = css`
 
   :host([position='top']) {
     & :popover-open {
+      /*
+      https://developer.chrome.com/blog/anchor-positioning-api
+      */
       inset-area: block-top;
     }
   }
