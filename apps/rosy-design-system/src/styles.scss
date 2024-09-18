@@ -168,3 +168,14 @@ gap:1rem;
   justify-content: center;
   align-items: center;
 }
+
+@keyframes color-hue{
+  from{--color-hue:0;}
+   to{--color-hue:180;}
+}
+
+@property --color-hue{
+  syntax:"<number>";
+  initial-value:0;
+  inherits:true;
+}

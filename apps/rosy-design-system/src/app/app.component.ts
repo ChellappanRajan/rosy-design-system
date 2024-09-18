@@ -1,14 +1,11 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {SimmerExampleComponent} from './shimmer.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   standalone: true,
-  imports: [SimmerExampleComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  imports: [RouterOutlet, RouterLink],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  constructor(){
-  }
-}
+export class AppComponent {}
