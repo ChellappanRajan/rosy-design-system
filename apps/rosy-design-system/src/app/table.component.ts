@@ -5,7 +5,7 @@ import {
   TableBody,
   TableCell,
   TableHead,
-} from '@rosy-design-system/rosy-design-system';
+} from '@rosy-design-system';
 @Component({
   standalone: true,
   imports: [],

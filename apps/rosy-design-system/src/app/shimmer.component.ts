@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ShimmerLoader } from '@rosy-design-system/rosy-design-system';
+import { ShimmerLoader } from '@rosy-design-system';
 @Component({
   standalone: true,
   imports: [],

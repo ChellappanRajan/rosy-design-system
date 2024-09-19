@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 
-import '@rosy-design-system/rosy-design-system';
+import '@rosy-design-system';
 </script>
 
 <template>
