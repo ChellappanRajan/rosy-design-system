@@ -179,3 +179,38 @@ gap:1rem;
   initial-value:0;
   inherits:true;
 }
+
+@container style(--variant:sm){
+  .card{
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+@container style(--variant:lg){
+  .card {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+
+/* Shimmer Utilities starts */
+
+.r-rounded{
+  --shape:rounded;
+}
+
+.rounded-md{
+  --shape:rounded-md;
+}
+.rounded-lg{
+  --shape:rounded-lg;
+}
+.rounded-full{
+  --shape:rounded-full;
+}
+.rounded-none{
+  --shape:rounded-none;
+}
+
+/* Shimmer Utilities End */
