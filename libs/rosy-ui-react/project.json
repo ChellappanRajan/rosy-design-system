@@ -1,0 +1,9 @@
+{
+  "name": "rosy-ui-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/rosy-ui-react/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project rosy-ui-react --web",
+  "targets": {}
+}

@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rosy-design-system": ["libs/rosy-design-system/src/index.ts"]
+      "@rosy-design-system": ["libs/rosy-design-system/src/index.ts"],
+      "@rosy-design-system/rosy-ui-react": ["libs/rosy-ui-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
