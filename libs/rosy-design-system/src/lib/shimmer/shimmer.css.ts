@@ -17,26 +17,26 @@ export const styles = css`
     --height: var(--rosy-shimmer-loader-height);
   }
 
-  :host([shape='rounded-full']) {
-    & .shimmer-box {
+  @container style(--shape:rounded-full) {
+    .shimmer-box {
       border-radius: 9999px;
     }
   }
 
-  :host([shape='rounded']) {
-    & .shimmer-box {
+  @container style(--shape:rounded) {
+    .shimmer-box {
       border-radius: 0.25rem;
     }
   }
 
-  :host([shape='rounded-md']) {
-    & .shimmer-box {
+  @container style(--shape:rounded-md) {
+    .shimmer-box {
       border-radius: 0.375rem;
     }
   }
 
-  :host([shape='rounded-lg']) {
-    & .shimmer-box {
+  @container style(--shape:rounded-lg) {
+    .shimmer-box {
       border-radius: 0.5rem;
     }
   }
