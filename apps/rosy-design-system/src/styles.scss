@@ -214,3 +214,11 @@ gap:1rem;
 }
 
 /* Shimmer Utilities End */
+
+//For some reason @property not working within web component
+
+@property --placement{
+  syntax: 'top | bottom | left | right';
+  inherits: true;
+  initial-value: top;
+}

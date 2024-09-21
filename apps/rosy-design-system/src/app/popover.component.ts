@@ -8,20 +8,24 @@ import { Popover } from '@rosy-design-system';
   template: `
     <div class="center">
       <select (change)="onChange($event)">
+        <option value="">Default(top)</option>
         <option value="top">Top</option>
         <option value="bottom">Bottom</option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
         <option value="center-left">Center Left</option>
         <option value="center-right">Center Right</option>
       </select>
       <rosy-popover
+        [style.--placement]="position"
         title="Hello Test A11y"
-        [position]="position"
+        style="--placement:top"
       ></rosy-popover>
     </div>
   `,
 })
 export default class PopoverExampleComponent {
-  position = 'center-left';
+  position = '';
   constructor() {
     console.log(Popover);
   }
