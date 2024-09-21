@@ -1,6 +1,11 @@
 import { css } from 'lit';
 
 export const styles = css`
+  @property --placement {
+    syntax: 'top | bottom | left | right';
+    inherits: true;
+    initial-value: top;
+  }
   .btn {
     width: fit-content;
     border-radius: 1rem;
@@ -29,7 +34,7 @@ export const styles = css`
     padding: 1rem;
     height: 100px;
     border: none;
-    /*Since popover attribute by default have inset:0 without these positioing not working
+    /*Since popover attribute by default have inset:0, we must set inset:0 inorder to position anchor
   */
     inset: auto;
     position: absolute;
@@ -39,47 +44,34 @@ export const styles = css`
     position-anchor: --popover-trigger-element;
   }
 
-  :host([position='center-left']) {
-    & :popover-open {
-      inset-block-start: anchor(--popover-trigger-element center);
-      inset-inline-end: anchor(--popover-trigger-element left);
+  @container style(--placement:top) {
+    :popover-open {
+      position-area: block-start;
+      position-try-fallbacks: flip-block;
+      position-try-order: most-block-size;
     }
   }
 
-  :host([position='top']) {
-    & :popover-open {
-      /*
-      https://developer.chrome.com/blog/anchor-positioning-api
-      */
-      inset-area: block-top;
-    }
-  }
-  :host([position='bottom']) {
-    & :popover-open {
-      inset-area: block-end;
+  @container style(--placement:bottom) {
+    :popover-open {
+      position-area: block-end;
+      position-try-fallbacks: flip-block;
     }
   }
 
-  :host([position='center-right']) {
-    & :popover-open {
-      /* top of the popover container - anchor center
-  *block-top/bottom
-  *inline-left/righ
-  *position-area should try
-  * */
-
-      inset-block-start: anchor(--popover-trigger-element center);
-
-      inset-inline-start: anchor(--popover-trigger-element right);
-
-      /* position-try-fallbacks:flip-block flip-inline;
-    */
+  @container style(--placement:left) {
+    :popover-open {
+      position-area: inline-start;
+      position-try-fallbacks: flip-inline, flip-block;
     }
   }
 
-  // @position-try --bottom{
-  //   bottom:anchor(--popover-trigger-element center);
-  // }
+  @container style(--placement:right) {
+    :popover-open {
+      position-area: inline-end;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
 
   .header {
     display: flex;
@@ -89,8 +81,7 @@ export const styles = css`
   h2 {
     margin: 0;
   }
-  main {
-  }
+
   .close-button {
     border: none;
     padding: 0.25rem;

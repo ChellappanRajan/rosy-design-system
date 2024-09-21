@@ -8,28 +8,38 @@ import {
 } from 'lit/decorators.js';
 import { styles } from './popover.css';
 
+/**
+ * @cssproperty --placement - Controls the placement of the popover relative to its anchor element.
+ *
+ * @type {'top' | 'bottom' | 'left' | 'right'}
+ *
+ * @description
+ * This CSS custom property determines the position of the popover relative to the anchor element. The possible values are:
+ * - `'top'`: Aligns the popover above the anchor.
+ * - `'bottom'`: Aligns the popover below the anchor.
+ * - `'left'`: Aligns the popover to the left side of the anchor.
+ * - `'right'`: Aligns the popover to the right side of the anchor.
+ *
+ * The `--placement` property allows for easy CSS-based customization of the popover's positioning. The default value is `'center-left'`.
+ *
+ * @example
+ * // Usage in HTML
+ * <my-popover style="--placement: top"></my-popover>
+ *
+ * @example
+ * // JSX example
+ * import React from 'react';
+ *
+ * function App() {
+ *   return (
+ *     <MyPopover style={{ '--placement': 'bottom' }} />
+ *   );
+ * }
+ */
+
 @customElement('rosy-popover')
 export class Popover extends LitElement {
   static override styles = styles;
-
-  /**
-   * The position of the popover relative to its anchor element.
-   *
-   * @property {string} position - The position of the popover.
-   * Possible values are:
-   * - 'center-right': Aligns the popover to the center of the right side of the anchor.
-   * - 'center-left': Aligns the popover to the center of the left side of the anchor.
-   * - 'top': Aligns the popover above the anchor.
-   * - 'bottom': Aligns the popover below the anchor.
-   *
-   * @default 'center-left'
-   * @reflects
-   */
-  @property({ reflect: true, type: String }) accessor position:
-    | 'center-right'
-    | 'center-left'
-    | 'top'
-    | 'bottom' = 'center-right';
 
   @property({ type: String }) override accessor title!: string;
 
