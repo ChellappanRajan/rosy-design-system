@@ -19,7 +19,6 @@ import { Popover } from '@rosy-design-system';
       <rosy-popover
         [style.--placement]="position"
         title="Hello Test A11y"
-        style="--placement:top"
       ></rosy-popover>
     </div>
   `,

@@ -24,22 +24,18 @@ import { ShimmerLoader } from '@rosy-design-system';
         style="display:block; margin-top:1rem; --width: 342px; height: 100px;"
       ></rosy-shimmer-loader>
     </div>
-    <div class="roboto-regular">
+    <div class="roboto-regular rounded-md">
       <h1>Multiline Example</h1>
       <rosy-shimmer-loader
-        class="rounded-md"
         style="--width: 500px; --height: 20px; display: block;"
       ></rosy-shimmer-loader>
       <rosy-shimmer-loader
-        class="rounded-md"
         style="--width: 400px; --height: 20px;display: block; margin-top: 10px;"
       ></rosy-shimmer-loader>
       <rosy-shimmer-loader
-        class="rounded-md"
         style="--width: 300px; --height: 20px;display: block; margin-top: 10px;"
       ></rosy-shimmer-loader>
       <rosy-shimmer-loader
-        class="rounded-md"
         style="--width: 200px; --height: 20px; display: block; margin-top: 10px;"
       ></rosy-shimmer-loader>
     </div>

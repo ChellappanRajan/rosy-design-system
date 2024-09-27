@@ -17,6 +17,12 @@ export const styles = css`
     --height: var(--rosy-shimmer-loader-height);
   }
 
+  @property --shape {
+    syntax: 'rounded-md | rounded | rounded-lg | rounded-full | rounded-none';
+    inherits: true;
+    initial-value: rounded-none;
+  }
+
   @container style(--shape:rounded-full) {
     .shimmer-box {
       border-radius: 9999px;

@@ -222,3 +222,13 @@ gap:1rem;
   inherits: true;
   initial-value: top;
 }
+
+@property --shape{
+  syntax: "rounded | rounded-md | rounded-lg | rounded-full | rounded-none";
+  inherits:true;
+  initial-value: rounded-none;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
