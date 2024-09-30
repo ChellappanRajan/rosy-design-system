@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { DiscordIconComponent } from './icon.component';
 
 @Component({
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, RouterOutlet, DiscordIconComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -29,4 +30,6 @@ export class AppComponent {
 
 //Change surround not working
 //cs"` - working
+//shift + 5 for check open and close tag such as () and [] and {}
 //cst - change surroundings tag left shift+[,<],
+//shift + + to jump to start of the line next ()

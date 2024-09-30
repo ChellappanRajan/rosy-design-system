@@ -1,3 +1,18 @@
+<div class="h-screen flex bg-gray-900">
+  <div class="px-4 space-y-2 pt-3 overflow-y-scroll text-gray-300 w-[72px]">
+    <div class="hover:bg-blue-600 duration-300 text-lg transition h-12 w-12 bg-gray-600 flex items-center justify-center rounded-full">
+      <app-discord-icon></app-discord-icon>
+    </div>
+    @for (num of nums; track $index) {
+    <div class="hover:bg-blue-600 duration-300 text-lg transition h-12 w-12 bg-gray-600 flex items-center justify-center rounded-full">Cs</div>
+    }
+  </div>
+  <div class="w-60 bg-gray-800"></div>
+  <div class="flex-1">
+  <router-outlet></router-outlet>
+  </div>
+</div>
+
 <!-- <div class="flex text-white h-screen">
   <div class="bg-gray-800 p-4 overflow-y-scroll">
     @for (num of nums; track $index) {
@@ -24,7 +39,7 @@
   </div>
 </div> -->
 
-<div class="h-screen flex">
+<!-- <div class="h-screen flex">
   <div class="bg-gray-900 w-20 flex items-center flex-col gap-2 overflow-y-auto">
     @for(num of nums;track $index){
       <div class="w-10 h-10 flex-shrink-0 bg-white flex items-center justify-center rounded-full">{{$index}}</div>
@@ -47,4 +62,4 @@
     }
     </div>
   </div>
-</div>
+</div> -->
