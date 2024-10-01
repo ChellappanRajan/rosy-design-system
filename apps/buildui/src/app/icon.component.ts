@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-discord-icon',
+  styles: `
+  :host{
+    display:inline-block;
+  }
+  `,
   template: `
     <svg
       aria-hidden="true"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
       fill="none"
       viewBox="0 0 24 24"
     >
