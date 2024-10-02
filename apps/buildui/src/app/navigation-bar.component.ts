@@ -26,6 +26,7 @@ import { RouterLink } from '@angular/router';
       </div>
       <div
         [ngClass]="{
+          'group-active:-translate-y-px':true,
         'bg-blue-600 text-white rounded-2xl': active(),
         'text-lg transition-all h-12 w-12  flex items-center justify-center 
         ':true,
