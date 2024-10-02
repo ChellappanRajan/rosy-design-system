@@ -1,17 +1,43 @@
-import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Component, effect, inject } from '@angular/core';
+import {
+  NavigationEnd,
+  Router,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
 import { DiscordIconComponent } from './icon.component';
-
+import { NgClass } from '@angular/common';
+import { NavigationBarComponent } from './navigation-bar.component';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs';
 @Component({
   standalone: true,
-  imports: [RouterModule, RouterOutlet, DiscordIconComponent],
+  imports: [
+    RouterModule,
+    NgClass,
+    RouterOutlet,
+    DiscordIconComponent,
+    NavigationBarComponent,
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'buildui';
+  active = () => true;
   nums = [...Array(30)];
+  router = inject(Router);
+
+  activeURL = toSignal(
+    this.router.events.pipe(
+      map(event => (event instanceof NavigationEnd ? this.router.url : ''))
+    )
+  );
+
+  #logger = effect(() => {
+    console.info(`[App], ${this.activeURL()}`);
+  });
 }
 
 //cw - delete word in insert mode
