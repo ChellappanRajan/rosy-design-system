@@ -12,14 +12,14 @@ import { RouterLink } from '@angular/router';
       <div
         [ngClass]="{
           'duration-200 transition-all flex -left-3 h-full items-center absolute': true,
-          'opacity-0 group-hover:opacity-100 
+          'opacity-0 group-hover:opacity-100 origin-left 
         scale-0 group-hover:scale-100': !active()
         }"
       >
         <div
           [ngClass]="{
             'w-1 rounded-r bg-white': true,
-            'h-8': active(),
+            'h-10': active(),
             'h-5': !active()
           }"
         ></div>
@@ -27,10 +27,10 @@ import { RouterLink } from '@angular/router';
       <div
         [ngClass]="{
           'group-active:-translate-y-px':true,
-        'bg-blue-600 text-white rounded-2xl': active(),
+        'bg-brand text-white rounded-2xl': active(),
         'text-lg transition-all h-12 w-12  flex items-center justify-center 
         ':true,
-        'group-hover:bg-blue-600 bg-gray-600 rounded-3xl group-hover:text-white duration-200 
+        'group-hover:bg-brand bg-gray-700 rounded-3xl group-hover:text-white duration-200 
       group-hover:rounded-2xl':!active(),
       }
       "

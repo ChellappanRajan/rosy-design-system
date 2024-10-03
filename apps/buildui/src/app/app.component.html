@@ -1,15 +1,30 @@
-<div class="h-screen flex">
+<div class="h-screen flex" >
   <div class="p-3 space-y-2 overflow-y-scroll bg-gray-900">
-    <app-navigation-bar class="block text-white" [active]=" activeURL() === '/'" to="/" > 
+    <app-navigation-bar class="block text-gray-100" [active]=" activeURL() === '/'" to="/" > 
     </app-navigation-bar>
+    <hr class="border-t-white/[0.06] border-t-2 mx-2" />
     @for(num of nums;track $index){
-    <app-navigation-bar class="block text-white" [active]="activeURL() === '/channel/'+$index" [to]="'/channel/'+$index">
-      {{$index}}
+    <app-navigation-bar class="block text-gray-100" [active]="activeURL() === '/channel/'+$index" [to]="'/channel/'+$index">
+      {{$index}} 
     </app-navigation-bar>
     }
   </div>
-  <div class="w-60 bg-gray-800"></div>
+  <div class="w-60 bg-gray-800 flex-col flex">
+    <div class="p-3 h-12 shadow-md w-full text-white text-lg flex items-center">
+    <div class="flex gap-1 font-title">
+      Dashboard
+    </div>
+    </div>
+    <div class="flex-1 p-3">
+      Friends
+    </div>
+  </div>
   <div class="flex-1 bg-gray-600">
-  <router-outlet></router-outlet>
+    <div class="p-3 h-12 shadow-md w-full text-white text-lg">
+    General 
+    </div>
+    <div class="flex-1 p-3">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div> 
