@@ -28,7 +28,7 @@ import { RouterLink } from '@angular/router';
         [ngClass]="{
           'group-active:-translate-y-px':true,
         'bg-brand text-white rounded-2xl': active(),
-        'text-lg transition-all h-12 w-12  flex items-center justify-center 
+        'text-lg transition-all h-12 w-12  flex items-center justify-center overflow-hidden 
         ':true,
         'group-hover:bg-brand bg-gray-700 rounded-3xl group-hover:text-white duration-200 
       group-hover:rounded-2xl':!active(),

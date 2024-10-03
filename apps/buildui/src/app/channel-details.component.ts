@@ -13,11 +13,11 @@ import { map } from 'rxjs';
         class="p-3 h-12 shadow-md w-full text-white text-lg flex items-center"
       >
         <div class="flex gap-1 font-title">
-          {{ id() === '' ? 'Dashboard' : 'Server' }}
+          {{ id() ?? '' === '' ? 'Dashboard' : 'Server' }}
         </div>
       </div>
       <div class="flex-1 p-3 text-white">
-        {{ id() === '' ? 'Friends' : 'general' }}
+        {{ id() ?? '' === '' ? 'Friends' : 'general' }}
       </div>
     </div>
     <div class="flex-1 bg-gray-600">
@@ -37,15 +37,9 @@ import { map } from 'rxjs';
 })
 export default class ChannelDetailsComponent {
   router = inject(Router);
-  id = input();
+  id = input('');
 
   #logger = effect(() => {
-    console.log(`[Channel Component]- ${this.id()}`);
+    console.log(`[Channel Detail Component]- ${this.id()}`);
   });
-
-  activeURL = toSignal(
-    this.router.events.pipe(
-      map(event => (event instanceof NavigationEnd ? this.router.url : ''))
-    )
-  );
 }

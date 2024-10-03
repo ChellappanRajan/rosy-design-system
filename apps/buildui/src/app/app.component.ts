@@ -29,6 +29,17 @@ export class AppComponent {
   title = 'buildui';
   active = () => true;
   nums = [...Array(30)];
+  servers = [
+    {
+      img: './servers/mirage.png',
+    },
+    {
+      img: './servers/next.png',
+    },
+    {
+      img: './servers/tailwind.png',
+    },
+  ];
   router = inject(Router);
 
   activeURL = toSignal(
