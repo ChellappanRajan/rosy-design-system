@@ -11,14 +11,15 @@ import { RouterLink } from '@angular/router';
     <a class="group relative " [routerLink]="to()">
       <div
         [ngClass]="{
-          'duration-200 transition-all flex -left-3 h-full items-center absolute': true,
-          'opacity-0 group-hover:opacity-100 origin-left 
-        scale-0 group-hover:scale-100': !active()
+          ' flex -left-3 h-full items-center absolute': true,
+         
         }"
       >
         <div
           [ngClass]="{
-            'w-1 rounded-r bg-white': true,
+            'opacity-0 group-hover:opacity-100 origin-left 
+        scale-0 group-hover:scale-100': !active(),
+            'w-1 rounded-r bg-white duration-200 transition-all': true,
             'h-10': active(),
             'h-5': !active()
           }"
