@@ -9,22 +9,6 @@
     </app-navigation-bar>
     }
   </div>
-  <div class="w-60 bg-gray-800 flex-col flex">
-    <div class="p-3 h-12 shadow-md w-full text-white text-lg flex items-center">
-    <div class="flex gap-1 font-title">
-      Dashboard
-    </div>
-    </div>
-    <div class="flex-1 p-3">
-      Friends
-    </div>
-  </div>
-  <div class="flex-1 bg-gray-600">
-    <div class="p-3 h-12 shadow-md w-full text-white text-lg">
-    General 
-    </div>
-    <div class="flex-1 p-3">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+  <!-- <app-channel-detail class="contents"></app-channel-detail> -->
+  <router-outlet class="contents"></router-outlet>
 </div> 

@@ -12,7 +12,6 @@ import { RouterOutlet } from '@angular/router';
       nisi perspiciatis consectetur quidem, sint consequatur. Explicabo,
       architecto inventore?
     </h1>
-    <router-outlet />
   `,
   standalone: true,
 })

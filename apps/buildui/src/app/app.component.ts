@@ -10,6 +10,7 @@ import { NgClass } from '@angular/common';
 import { NavigationBarComponent } from './navigation-bar.component';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
+import ChannelDetailsComponent from './channel-details.component';
 @Component({
   standalone: true,
   imports: [
@@ -18,6 +19,7 @@ import { map } from 'rxjs';
     RouterOutlet,
     DiscordIconComponent,
     NavigationBarComponent,
+    ChannelDetailsComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
