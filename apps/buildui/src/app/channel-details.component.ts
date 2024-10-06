@@ -1,15 +1,10 @@
-import { Component, computed, effect, inject, input } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { VerifyIconComponent, TickIconComponent, ChevronDownArrowIconComponent, BookIconComponent, AddPersonIconComponent, SpeakerPhoneIconComponent, ArrowIconComponent, HashTagIconComponent } from './icon';
-// @ts-expect-error TypeScript cannot provide types based on attributes yet
-import data from "./data.json" with {type: "json"}
+import { Component, computed, effect, input } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { AddPersonIconComponent, ArrowIconComponent, BookIconComponent, ChevronDownArrowIconComponent, HashTagIconComponent, SpeakerPhoneIconComponent, TickIconComponent, VerifyIconComponent } from './icon';
 import { NgClass } from '@angular/common';
+// @ts-expect-error TypeScript cannot provide types based on attributes yet
+import data from "./data.json" with { type: "json" };
 
-const SERVERS = {
-  '2': 'Tailwind CSS',
-  '1': 'Next JS',
-  '0': 'Mirage'
-}
 
 @Component({
   selector: 'app-channel-detail',
@@ -88,20 +83,15 @@ const SERVERS = {
       <div class="space-y-0.5 mt-[5px]">
         <a
        [routerLink]="['/servers', id(),'channel', topicChannel.id ]"
-       
-          [ngClass]="{' px-2 group rounded hover:text-gray-100 mx-22 mx-2 py-1 relative flex items-center ':true, 'text-white bg-gray-550/[0.36]':this.$sid() === topicChannel.id,  'hover:text-gray-100 hover:bg-gray-550/[0.16]':this.$sid() !== topicChannel.id,
+       [ngClass]="{' px-2 group rounded hover:text-gray-100 mx-22 mx-2 py-1 relative flex items-center ':true, 'text-white bg-gray-550/[0.36]':this.$sid() === topicChannel.id,  'hover:text-gray-100 hover:bg-gray-550/[0.16]':this.$sid() !== topicChannel.id,
         'text-gray-100':topicChannel?.unread,
         'text-gray-300': !topicChannel?.unread 
-        }
-          
-          "
+        }"
         >
-
-      @if(topicChannel?.unread){
-        <div class="absolute w-1 h-2 -left-2   rounded-r-full bg-gray-100">
-        </div>
-
-      }
+          @if(topicChannel?.unread){
+            <div class="absolute w-1 h-2 -left-2   rounded-r-full bg-gray-100">
+            </div>
+          }
           <app-hash-tag-icon class="w-5 h-5 mr-1.5 text-gray-400" />
           {{ topicChannel.label }}
           <app-add-person-icon
@@ -141,8 +131,7 @@ export default class ChannelDetailsComponent {
   $currentServer = computed(() => data[`${this.$id()}`]);
 
   #logger = effect(() => {
-  console.log('[Channel Detail Component]',{sid:this.sid(),isActive:this.sid()});
+    console.log('[Channel Detail Component]',{sid:this.sid(),isActive:this.sid()});
     console.log(`[Channel Detail Component]- ${this.id()}`);
   });
-  serverNames: Record<string, string> = SERVERS;
 }
