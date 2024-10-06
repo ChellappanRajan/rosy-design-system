@@ -32,12 +32,15 @@ export class AppComponent {
   servers = [
     {
       img: './servers/mirage.png',
+      id: 1,
     },
     {
       img: './servers/next.png',
+      id: 2,
     },
     {
       img: './servers/tailwind.png',
+      id: 3,
     },
   ];
   router = inject(Router);
