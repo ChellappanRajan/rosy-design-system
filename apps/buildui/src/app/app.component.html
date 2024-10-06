@@ -10,8 +10,8 @@
     @for(server of servers;track $index){
     <app-navigation-bar
       class="block text-gray-100"
-      [active]="activeURL() === '/channel/' + $index"
-      [to]="'/channel/' + $index"
+      [active]="activeURL() === '/servers/' + $index + '/channel/' + $index"
+      [to]="'/servers/' + $index + '/channel/' + $index"
     >
       <img [src]="server.img" />
     </app-navigation-bar>

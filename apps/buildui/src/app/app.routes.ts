@@ -8,7 +8,7 @@ export const appRoutes: Route[] = [
     component: ChannelDetailsComponent,
   },
   {
-    path: 'channel/:id',
+    path: 'servers/:id/channel/:sid',
     loadComponent: () => import('./channel-details.component'),
     // children:[
     //     {
