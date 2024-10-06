@@ -3,6 +3,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { VerifyIconComponent, TickIconComponent, ChevronDownArrowIconComponent, BookIconComponent, AddPersonIconComponent, SpeakerPhoneIconComponent, ArrowIconComponent, HashTagIconComponent } from './icon';
 // @ts-expect-error TypeScript cannot provide types based on attributes yet
 import data from "./data.json" with {type: "json"}
+import { NgClass } from '@angular/common';
 
 const SERVERS = {
   '2': 'Tailwind CSS',
@@ -17,6 +18,7 @@ const SERVERS = {
     VerifyIconComponent,
     TickIconComponent,
     ChevronDownArrowIconComponent,
+    NgClass,
     BookIconComponent,
     AddPersonIconComponent,
     SpeakerPhoneIconComponent,
@@ -50,9 +52,14 @@ const SERVERS = {
       @for (item of category.channels; track $index) {
       <a
    
-       [routerLink]="['/servers', id(),'channel', $index ]"
+       [routerLink]="['/servers', id(),'channel', item.id ]"
        routerLinkActive="router-link-active"
-        class="hover:bg-gray-550/[0.16] px-2 group rounded hover:text-gray-100 mx-22 mx-2 py-1 flex items-center text-gray-300"
+        [ngClass]="{
+    
+      ' px-2 group rounded  mx-22 mx-2 py-1 flex items-center text-gray-300':true ,
+      'text-white bg-gray-550/[0.36]':this.$sid() === item.id,
+      'hover:text-gray-100 hover:bg-gray-550/[0.16]':this.$sid() !== item.id
+      }"
       >
         @switch(item.icon){ @case ("Book") {
         <app-book-icon class="w-5 h-5 mr-1.5 text-gray-400" />
@@ -71,7 +78,7 @@ const SERVERS = {
     } @if(category.id > 1){
     <div class="mt-[21px]">
       <button
-        class="px-0.5 flex items-center tracking-wide text-xs font-title uppercase"
+        class="px-0.5 flex items-center tracking-wide text-xs font-title uppercase hover:text-gray-100"
       >
         <app-arrow-icon class="w-3 h-3 mr-0.5" />
         {{ category.label }}
@@ -80,9 +87,21 @@ const SERVERS = {
       @for(topicChannel of category.channels;track topicChannel.id){
       <div class="space-y-0.5 mt-[5px]">
         <a
-          href="#"
-          class="hover:bg-gray-550/[0.16] px-2 group rounded hover:text-gray-100 mx-22 mx-2 py-1 flex items-center text-gray-300"
+       [routerLink]="['/servers', id(),'channel', topicChannel.id ]"
+       
+          [ngClass]="{' px-2 group rounded hover:text-gray-100 mx-22 mx-2 py-1 relative flex items-center ':true, 'text-white bg-gray-550/[0.36]':this.$sid() === topicChannel.id,  'hover:text-gray-100 hover:bg-gray-550/[0.16]':this.$sid() !== topicChannel.id,
+        'text-gray-100':topicChannel?.unread,
+        'text-gray-300': !topicChannel?.unread 
+        }
+          
+          "
         >
+
+      @if(topicChannel?.unread){
+        <div class="absolute w-1 h-2 -left-2   rounded-r-full bg-gray-100">
+        </div>
+
+      }
           <app-hash-tag-icon class="w-5 h-5 mr-1.5 text-gray-400" />
           {{ topicChannel.label }}
           <app-add-person-icon
@@ -111,15 +130,18 @@ const SERVERS = {
   standalone: true,
 })
 export default class ChannelDetailsComponent {
-  router = inject(Router);
   id = input(-1);
+  sid = input(-1);
+
   data = data;
-  $id = computed(() => `${this.id()}`)
+  $id = computed(() => `${this.id()}`);  
+  $sid = computed(() => +this.sid());
+
 
   $currentServer = computed(() => data[`${this.$id()}`]);
 
   #logger = effect(() => {
-  console.log('[Channel Detail Component]',{currentServer:this.$currentServer()});
+  console.log('[Channel Detail Component]',{sid:this.sid(),isActive:this.sid()});
     console.log(`[Channel Detail Component]- ${this.id()}`);
   });
   serverNames: Record<string, string> = SERVERS;

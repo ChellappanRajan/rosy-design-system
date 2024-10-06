@@ -14,10 +14,10 @@
         "id": 2,
         "label": "Tailwind CSS",
         "channels": [
-          { "id": 3, "label": "general" },
-          { "id": 4, "label": "plugins" },
-          { "id": 5, "label": "help" },
-          { "id": 6, "label": "internals" }
+          { "id": 3, "label": "general","unread":true },
+          { "id": 4, "label": "plugins","unread":true},
+          { "id": 5, "label": "help" ,"unread":true},
+          { "id": 6, "label": "internals" ,"unread":false}
         ]
       },
       {
