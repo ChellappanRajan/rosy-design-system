@@ -6,8 +6,357 @@
         "id": 1,
         "label": "",
         "channels": [
-          { "id": 1, "label": "welcome", "icon": "Book" },
-          { "id": 2, "label": "announcements", "icon": "Speakerphone" }
+          { "id": 1, "label": "welcome", "icon": "Book",
+          "messages":[
+            {
+                "user": "user_5323",
+                "avatarUrl": "https://example.com/avatar/user_5323.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_7565",
+                "avatarUrl": "https://example.com/avatar/user_7565.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_1709",
+                "avatarUrl": "https://example.com/avatar/user_1709.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_1709",
+                "avatarUrl": "https://example.com/avatar/user_1709.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_1709",
+                "avatarUrl": "https://example.com/avatar/user_1709.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_1709",
+                "avatarUrl": "https://example.com/avatar/user_1709.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_8426",
+                "avatarUrl": "https://example.com/avatar/user_8426.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_8426",
+                "avatarUrl": "https://example.com/avatar/user_8426.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_8426",
+                "avatarUrl": "https://example.com/avatar/user_8426.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_8426",
+                "avatarUrl": "https://example.com/avatar/user_8426.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_9347",
+                "avatarUrl": "https://example.com/avatar/user_9347.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_9347",
+                "avatarUrl": "https://example.com/avatar/user_9347.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_6836",
+                "avatarUrl": "https://example.com/avatar/user_6836.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_6836",
+                "avatarUrl": "https://example.com/avatar/user_6836.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_8403",
+                "avatarUrl": "https://example.com/avatar/user_8403.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_8738",
+                "avatarUrl": "https://example.com/avatar/user_8738.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            },
+            {
+                "user": "user_8738",
+                "avatarUrl": "https://example.com/avatar/user_8738.png",
+                "date": "01/15/2021",
+                "text": "This is a dummy message."
+            }
+        ],
+          "description":"Introduction to the Tailwind CSS framework and community."
+         },
+          { "id": 2, "label": "announcements", "icon": "Speakerphone",
+         "messages":[
+          {
+              "user": "user_8277",
+              "avatarUrl": "https://example.com/avatar/user_8277.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2735",
+              "avatarUrl": "https://example.com/avatar/user_2735.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2735",
+              "avatarUrl": "https://example.com/avatar/user_2735.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_7977",
+              "avatarUrl": "https://example.com/avatar/user_7977.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_7977",
+              "avatarUrl": "https://example.com/avatar/user_7977.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_7977",
+              "avatarUrl": "https://example.com/avatar/user_7977.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_7977",
+              "avatarUrl": "https://example.com/avatar/user_7977.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_6056",
+              "avatarUrl": "https://example.com/avatar/user_6056.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_4108",
+              "avatarUrl": "https://example.com/avatar/user_4108.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_4108",
+              "avatarUrl": "https://example.com/avatar/user_4108.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_4108",
+              "avatarUrl": "https://example.com/avatar/user_4108.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2230",
+              "avatarUrl": "https://example.com/avatar/user_2230.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2230",
+              "avatarUrl": "https://example.com/avatar/user_2230.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2230",
+              "avatarUrl": "https://example.com/avatar/user_2230.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2230",
+              "avatarUrl": "https://example.com/avatar/user_2230.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_1437",
+              "avatarUrl": "https://example.com/avatar/user_1437.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_1437",
+              "avatarUrl": "https://example.com/avatar/user_1437.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_1437",
+              "avatarUrl": "https://example.com/avatar/user_1437.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2889",
+              "avatarUrl": "https://example.com/avatar/user_2889.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2889",
+              "avatarUrl": "https://example.com/avatar/user_2889.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2889",
+              "avatarUrl": "https://example.com/avatar/user_2889.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2889",
+              "avatarUrl": "https://example.com/avatar/user_2889.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_1006",
+              "avatarUrl": "https://example.com/avatar/user_1006.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_1006",
+              "avatarUrl": "https://example.com/avatar/user_1006.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_7942",
+              "avatarUrl": "https://example.com/avatar/user_7942.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_7942",
+              "avatarUrl": "https://example.com/avatar/user_7942.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_7942",
+              "avatarUrl": "https://example.com/avatar/user_7942.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_6682",
+              "avatarUrl": "https://example.com/avatar/user_6682.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_8375",
+              "avatarUrl": "https://example.com/avatar/user_8375.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_8375",
+              "avatarUrl": "https://example.com/avatar/user_8375.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_8375",
+              "avatarUrl": "https://example.com/avatar/user_8375.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_8375",
+              "avatarUrl": "https://example.com/avatar/user_8375.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2802",
+              "avatarUrl": "https://example.com/avatar/user_2802.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_2802",
+              "avatarUrl": "https://example.com/avatar/user_2802.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_3750",
+              "avatarUrl": "https://example.com/avatar/user_3750.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_3750",
+              "avatarUrl": "https://example.com/avatar/user_3750.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_3750",
+              "avatarUrl": "https://example.com/avatar/user_3750.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_3750",
+              "avatarUrl": "https://example.com/avatar/user_3750.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_4584",
+              "avatarUrl": "https://example.com/avatar/user_4584.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          },
+          {
+              "user": "user_4584",
+              "avatarUrl": "https://example.com/avatar/user_4584.png",
+              "date": "01/15/2021",
+              "text": "This is a dummy message."
+          }
+      ]
+        }
         ]
       },
       {

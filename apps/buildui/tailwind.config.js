@@ -44,5 +44,8 @@ module.exports = {
       // borderStyle: ['hover'], // This goes here in Tailwind 3.x
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
+
 };

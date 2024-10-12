@@ -279,7 +279,7 @@ const bell = ` <svg viewBox="0 0 24 24" fill="none" >
 })
 export class BellIconComponent {}
 
-const hasTagWithSpeechBubble = `   <svg aria-hidden="false" viewBox="0 0 24 24" fill="none" >
+const hasTagWithSpeechBubble = `<svg aria-hidden="false" viewBox="0 0 24 24" fill="none" >
       <path
         fill="currentColor"
         d="M5.433 21a.12.12 0 01-.118-.141L6 17H2.143a.12.12 0 01-.118-.14l.308-1.76a.12.12 0 01.118-.1H6.35l1.06-6H3.553a.12.12 0 01-.118-.14l.308-1.76A.12.12 0 013.86 7H7.76l.692-3.901A.12.12 0 018.57 3h1.757a.12.12 0 01.118.141L9.76 7h6l.692-3.901A.12.12 0 0116.57 3h1.757a.12.12 0 01.118.141L17.76 7h3.857a.12.12 0 01.118.14l-.308 1.76a.12.12 0 01-.118.1h-3.9l-.36 2.04H15.05L15.41 9h-6l-1.06 6h2.21v2H8l-.693 3.901A.12.12 0 017.19 21H5.433z"
@@ -297,7 +297,7 @@ const hasTagWithSpeechBubble = `   <svg aria-hidden="false" viewBox="0 0 24 24" 
         display:inline-block;
       }
       `,
-  template: pin,
+  template: hasTagWithSpeechBubble,
   standalone: true,
 })
 export class HasTagWithSpeechBubbleIconComponent {}

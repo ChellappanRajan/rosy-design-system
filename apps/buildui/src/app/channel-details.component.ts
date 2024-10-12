@@ -1,6 +1,6 @@
 import { Component, computed, effect, input } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { AddPersonIconComponent, ArrowIconComponent, BookIconComponent, ChevronDownArrowIconComponent, HashTagIconComponent, SpeakerPhoneIconComponent, TickIconComponent, VerifyIconComponent } from './icon';
+import { AddPersonIconComponent, ArrowIconComponent, BookIconComponent, ChevronDownArrowIconComponent, HashTagIconComponent, SpeakerPhoneIconComponent, TickIconComponent, VerifyIconComponent, HasTagWithSpeechBubbleIconComponent, BellIconComponent, PinIconComponent, PeopleIconComponent, InboxIconComponent, QuestionCircleIconComponent } from './icon';
 import { NgClass } from '@angular/common';
 // @ts-expect-error TypeScript cannot provide types based on attributes yet
 import data from "./data.json" with { type: "json" };
@@ -19,8 +19,14 @@ import data from "./data.json" with { type: "json" };
     SpeakerPhoneIconComponent,
     RouterLink,
     ArrowIconComponent,
-    HashTagIconComponent
-  ],
+    HashTagIconComponent,
+    HasTagWithSpeechBubbleIconComponent,
+    BellIconComponent,
+    PinIconComponent,
+    PeopleIconComponent,
+    InboxIconComponent,
+    QuestionCircleIconComponent
+],
   styles: `:host{display:contents}`,
   template: 
   ` @let serverData = $currentServer();
@@ -104,8 +110,52 @@ import data from "./data.json" with { type: "json" };
     } }
   </div>
 </div>
-<div class="flex-1 bg-gray-600">
-  <div class="p-3 h-12 shadow-md w-full text-white text-lg">General</div>
+<div class="flex-1 bg-gray-700 flex-shrink min-w-0">
+  <div class="p-3 h-12 shadow-md w-full flex text-white text-lg">
+    <div class="flex items-center">
+    <app-hash-tag-icon class="
+    w-6 h-6 mx-2 font-semibold text-gray-400" />
+    General
+    </div>
+
+    
+    <div class="w-px h-6 bg-white/[0.06] mx-2">
+    </div>
+    <div class="text-sm font-medium text-gray-200 mx-2 flex-shrink truncate min-w-0">
+    Introduction to the Tailwind CSS framework and community.
+    </div>
+    
+    
+    <div class="flex items-center ml-auto">
+      <button class="text-gray-200 hover:text-gray-100">
+        <app-has-tag-with-speech-bubble-icon class="w-6 h-6 mx-2" />
+      </button>
+      <button className="text-gray-200 hover:text-gray-100">
+      <app-bell-icon />
+    </button>
+    <button className="text-gray-200 hover:text-gray-100">
+      
+      <app-pin-icon class="w-6 h-6 mx-2" />
+    </button>
+    <button className="text-gray-200 hover:text-gray-100">
+      <app-people-icon class="w-6 h-6 mx-2" />
+    </button>
+    <div class="mx-2 relative">
+    <input placeholder="Search" class="placeholder-gray-400 px-1.5 border-none bg-gray-900 rounded w-36 h-6 font-medium text-sm"/>
+    </div>
+    <button className="text-gray-200 hover:text-gray-100">
+     
+      <app-inbox-icon class="w-6 h-6 mx-2" />
+    </button>
+    <button className="text-gray-200 hover:text-gray-100">
+
+      <app-question-circle-icon class="w-6 h-6 mx-2" />
+    </button>
+
+
+    
+    </div>
+  </div>
   <div class="flex-1 p-3">
     <p class="text-white">
       Channel Component {{ id() }}
@@ -128,10 +178,13 @@ export default class ChannelDetailsComponent {
   $sid = computed(() => +this.sid());
 
 
+
+
+
   $currentServer = computed(() => data[`${this.$id()}`]);
 
   #logger = effect(() => {
-    console.log('[Channel Detail Component]',{sid:this.sid(),isActive:this.sid()});
+    console.log('[Channel Detail Component]',{details:this.$currentServer(),sid:this.sid(),isActive:this.sid()});
     console.log(`[Channel Detail Component]- ${this.id()}`);
   });
 }
