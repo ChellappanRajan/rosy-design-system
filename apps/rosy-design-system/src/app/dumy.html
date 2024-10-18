@@ -1,0 +1,54 @@
+<style>
+    .card{
+      height: 300px;
+      display: flex;
+    }
+    
+    </style>
+    <style>
+      ul {
+        display: grid;
+        gap: 1rem;
+        place-content: center;
+      }
+      .card {
+        position: sticky;
+        top:0;
+        height: 200px;
+        width: 400px;
+        list-style-type: none;
+        background-color: aliceblue;
+        animation: change-display linear;
+        animation-timeline:view(200px 400px);
+        //during scroll down animation start when the element enter the viewport and meet 400px
+        //from scroll up animation start when the element enter in the 200px
+        <!-- animation-start-range:400px; -->
+        <!-- animation-end-range:200px; -->
+    
+        <!-- animation-range:contain; -->
+          //contain means when the element enter from the bottom and the container should fully visible inorder to animation kick off
+    
+          //cover is the default beahviour when the element origin enter the viewport animation kick off
+      }
+      @keyframes change-display{
+        from{ transform:scale(2)}
+        to{ transform:scale(1)}
+      }
+    
+    </style>
+    
+    <div class="card">
+    <header class="header">
+      <img width="50" height="50" style="border-radius: 50%;" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_Retriever_Dukedestiny01_drvd.jpg">
+    <div style="display: flex; flex-direction: column;;">
+      <h1 style="margin: 0;">Golden Retriver</h1>
+      <span>Dog Breed</span>
+    </div>  
+    </header>
+    <main class="body">
+    Body
+    </main>
+    <footer class="footer">
+    Footer
+    </footer>
+    </div>

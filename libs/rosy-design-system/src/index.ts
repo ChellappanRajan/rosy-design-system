@@ -8,3 +8,6 @@ export * from './lib/table/table-row';
 export * from './lib/table/table-cell';
 export * from './lib/table/table-body';
 export * from './lib/table/table';
+export * from './lib/labs/select';
+export * from './lib/avator/avatar-group';
+export * from './lib/avator/avatar';
