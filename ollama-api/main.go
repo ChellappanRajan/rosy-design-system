@@ -1,76 +1,44 @@
 package main
 
 import (
-	"bytes"
-	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 	"time"
 )
 
-type Request struct {
-	Model    string    `json:"model"`
-	Messages []Message `json:"messages"`
-	Stream   bool      `json:"stream"`
-}
+func streamHandler(w http.ResponseWriter, r *http.Request) {
 
-type Message struct {
-	Role    string `json:"role"`
-	Content string `json:"content"`
-}
+	// Set CORS headers to allow requests from your Angular app
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:4200")
+	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
-type Response struct {
-	Model              string    `json:"model"`
-	CreatedAt          time.Time `json:"created_at"`
-	Message            Message   `json:"message"`
-	Done               bool      `json:"done"`
-	TotalDuration      int64     `json:"total_duration"`
-	LoadDuration       int       `json:"load_duration"`
-	PromptEvalCount    int       `json:"prompt_eval_count"`
-	PromptEvalDuration int       `json:"prompt_eval_duration"`
-	EvalCount          int       `json:"eval_count"`
-	EvalDuration       int64     `json:"eval_duration"`
-}
+	// Set the necessary headers to keep the connection open and stream data
+	w.Header().Set("Content-Type", "text/event-stream") // For streaming
+	w.Header().Set("Cache-Control", "no-cache")
+	w.Header().Set("Connection", "keep-alive")
 
-const defaultOllamaURL = "http://localhost:11434/api/chat"
+	// Flusher allows us to flush data to the client immediately
+	flusher, ok := w.(http.Flusher)
+	if !ok {
+		http.Error(w, "Streaming unsupported", http.StatusInternalServerError)
+		return
+	}
+
+	// Stream data periodically
+	for i := 0; i < 100; i++ {
+		fmt.Fprintf(w, "data: Message %d at %s\n\n", i+1, time.Now().Format(time.RFC3339))
+		flusher.Flush()             // Send the data immediately
+		time.Sleep(1 * time.Second) // Simulate delay between messages
+	}
+
+	fmt.Fprintf(w, "data: Stream Ended\n\n")
+	flusher.Flush()
+}
 
 func main() {
-	start := time.Now()
-	msg := Message{
-		Role:    "user",
-		Content: "Why is the sky blue?",
-	}
-	req := Request{
-		Model:    "llama3.2",
-		Stream:   false,
-		Messages: []Message{msg},
-	}
-	resp, err := talkToOllama(defaultOllamaURL, req)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-	fmt.Println(resp.Message.Content)
-	fmt.Printf("Completed in %v", time.Since(start))
-}
+	http.HandleFunc("/stream", streamHandler)
 
-func talkToOllama(url string, ollamaReq Request) (*Response, error) {
-	js, err := json.Marshal(&ollamaReq) //Serialize struct into JSON
-	if err != nil {
-		return nil, err
-	}
-	client := http.Client{} //http object to make http call
-	httpReq, err := http.NewRequest(http.MethodPost, url, bytes.NewReader(js))
-	if err != nil {
-		return nil, err
-	}
-	httpResp, err := client.Do(httpReq)
-	if err != nil {
-		return nil, err
-	}
-	defer httpResp.Body.Close() //close body if function return early for close previous open body
-	ollamaResp := Response{}
-	err = json.NewDecoder(httpResp.Body).Decode(&ollamaResp)
-	return &ollamaResp, err
+	fmt.Println("Server started at :8080")
+	http.ListenAndServe(":8080", nil)
 }
