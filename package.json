@@ -12,6 +12,7 @@
     "format": "npm run format:eslint && npm run format:prettier",
     "format:all": "npx nx format:write",
     "api":"npx nx serve ollama-api",
+    "ng-ollama":" npx nx serve ng-ollama",
     "lint:eslint": "eslint --ext .ts,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .ts,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.ts\" --check --ignore-path .gitignore",
