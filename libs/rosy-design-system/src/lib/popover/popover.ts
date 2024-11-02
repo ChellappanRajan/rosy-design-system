@@ -20,7 +20,7 @@ import { styles } from './popover.css';
  * - `'left'`: Aligns the popover to the left side of the anchor.
  * - `'right'`: Aligns the popover to the right side of the anchor.
  *
- * The `--placement` property allows for easy CSS-based customization of the popover's positioning. The default value is `'center-left'`.
+ * The `--placement` property allows for easy CSS-based customization of the popover's positioning. The default value is `'top'`.
  *
  * @example
  * // Usage in HTML
