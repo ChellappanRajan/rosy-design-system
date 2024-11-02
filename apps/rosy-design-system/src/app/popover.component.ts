@@ -13,8 +13,14 @@ import { Popover } from '@rosy-design-system';
         <option value="bottom">Bottom</option>
         <option value="left">Left</option>
         <option value="right">Right</option>
-        <option value="center-left">Center Left</option>
-        <option value="center-right">Center Right</option>
+        <option value="top-start">Top Start</option>
+        <option value="top-end">Top End</option>
+        <option value="bottom-start">Bottom Start</option>
+        <option value="bottom-end">Bottom End</option>
+        <option value="left-start">Left Start</option>
+        <option value="left-end">Left End</option>
+        <option value="right-start">Right Start</option>
+        <option value="right-end">Right End</option>
       </select>
       <rosy-popover
         [style.--placement]="position"

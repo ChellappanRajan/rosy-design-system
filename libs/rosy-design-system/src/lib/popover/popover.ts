@@ -11,7 +11,7 @@ import { styles } from './popover.css';
 /**
  * @cssproperty --placement - Controls the placement of the popover relative to its anchor element.
  *
- * @type {'top' | 'bottom' | 'left' | 'right'}
+ * @type {'top' | 'bottom' | 'left' | 'right' | 'top-start'  | 'top-end' | 'bottom-start'  | 'bottom-end' | 'left-start' | 'left-end' | 'right-start' | 'right-end'}
  *
  * @description
  * This CSS custom property determines the position of the popover relative to the anchor element. The possible values are:
@@ -19,6 +19,14 @@ import { styles } from './popover.css';
  * - `'bottom'`: Aligns the popover below the anchor.
  * - `'left'`: Aligns the popover to the left side of the anchor.
  * - `'right'`: Aligns the popover to the right side of the anchor.
+ * - `'top-start'`: Aligns the popover to the top-start of the anchor.
+ * - `'top-end'`: Aligns the popover to the top-end side of the anchor.
+ * - `'bottom-start'`: Aligns the popover to the bottom-start side of the anchor.
+ * - `'bottom-end'`: Aligns the popover to the bottom-end side of the anchor.
+ * - `'left-start'`: Aligns the popover to the left-start side of the anchor.
+ * - `'left-end'`: Aligns the popover to the left-end side of the anchor.
+ * - `'right-start'`: Aligns the popover to the right-start side of the anchor.
+ * - `'right-end'`: Aligns the popover to the right-end side of the anchor.
  *
  * The `--placement` property allows for easy CSS-based customization of the popover's positioning. The default value is `'top '`.
  *
