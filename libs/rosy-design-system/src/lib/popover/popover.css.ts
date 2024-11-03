@@ -2,7 +2,9 @@ import { css } from 'lit';
 
 export const styles = css`
   @property --placement {
-    syntax: 'top | bottom | left | right';
+    syntax: 'top' | 'bottom' | 'left' | 'right' | 'topStart' | 'top-end' |
+      'bottom-start' | 'bottom-end' | 'left-start' | 'left-end' | 'right-start'
+      | 'right-end';
     inherits: true;
     initial-value: top;
   }
@@ -48,7 +50,7 @@ export const styles = css`
     :popover-open {
       position-area: block-start;
       position-try-fallbacks: flip-block;
-      position-try-order: most-block-size;
+      position-try-order: most-block-size most-inline-size;
     }
   }
 
@@ -69,6 +71,61 @@ export const styles = css`
   @container style(--placement:right) {
     :popover-open {
       position-area: inline-end;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+
+  @container style(--placement:top-start) {
+    :popover-open {
+      position-area: block-start span-inline-end;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+
+  @container style(--placement:top-end) {
+    :popover-open {
+      position-area: block-start span-inline-start;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+
+  @container style(--placement:bottom-start) {
+    :popover-open {
+      position-area: block-end span-inline-end;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+
+  @container style(--placement:bottom-end) {
+    :popover-open {
+      position-area: block-end span-inline-start;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+
+  @container style(--placement:left-start) {
+    :popover-open {
+      position-area: inline-start span-block-end;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+  @container style(--placement:left-end) {
+    :popover-open {
+      position-area: inline-start span-block-start;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+
+  @container style(--placement:right-start) {
+    :popover-open {
+      position-area: inline-end span-block-end;
+      position-try-fallbacks: flip-inline, flip-block;
+    }
+  }
+
+  @container style(--placement:right-end) {
+    :popover-open {
+      position-area: inline-end span-block-start;
       position-try-fallbacks: flip-inline, flip-block;
     }
   }
