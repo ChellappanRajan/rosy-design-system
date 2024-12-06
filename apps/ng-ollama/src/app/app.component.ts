@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, computed, effect, inject, signal, ViewEncapsulation } from '@angular/core';
+import { Component, computed, effect,ElementRef, inject, signal, viewChild, ViewEncapsulation } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { response } from 'express';
+
+
 
 
 const URL = `http://localhost:8080/stream`;
@@ -14,16 +15,32 @@ const URL = `http://localhost:8080/stream`;
 })
 export class AppComponent {
 
-
+elementRef = viewChild('ref');
+http = inject(HttpClient);
 
 response = signal('');
 
 _ = effect(()=>{
-  console.log(`[Log] ${this.response()}`);
+  const element = this.elementRef() as ElementRef;
+ 
+  if(this.response() && element){
+    // eslint-disable-next-line no-self-assign
+    // element.nativeElement.scrollTop = element.nativeElement.scrollTop;
+  }
+    console.log(element.nativeElement.scrollTop);
 })
 
 
 
+
+fetchData2(){
+    this.http.post('http://localhost:8080/api/conversation',{
+      "model": "llama3.2",
+  "prompt": "Why is the sky blue?"
+    }).subscribe((value)=>{
+       console.log(value);
+     })
+}
 
 
 fetchData() {
