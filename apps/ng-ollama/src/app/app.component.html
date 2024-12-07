@@ -25,11 +25,12 @@
       <div class="flex items-center justify-center w-full mt-auto">
         <div class="relative w-[60%] my-6">
           <input
+          #refInput
             placeholder="Ask me anything"
             class="w-full p-4 bg-blue-650 border-green-650 outline-none rounded-full"
           />
           <span
-            (click)="fetchData2()"
+            (click)="fetchData(refInput)"
             class="absolute right-0 top-4 pr-4 opacity-80"
           >
             <svg
