@@ -1,0 +1,9 @@
+<select (change)="onChange($event)">
+    <option value="">Default(Primary)</option>
+    <option value="primary">Primary</option>
+    <option value="secondary">Secondary</option>
+    <option value="ghost">Ghost</option>
+  </select>
+
+<rosy-button [style.--variant]="variant"  (click)="onClick($event)">Add</rosy-button>
+

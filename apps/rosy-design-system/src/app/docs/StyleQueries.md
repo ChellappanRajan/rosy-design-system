@@ -13,7 +13,7 @@ With style queries, we can handle all presentational styling using CSS propertie
 ## Why Style Queries Are Better Than Attribute Styling:
 
 1. **Decouples Structure and Presentation:**
-   - Style queries allow you to handle styling exclusively in CSS, making the HTML structure simpler and more focused on semantics rather than presentation. Previously, attributes like `size` or `pill` were used to toggle styles, mixing structure with styling.
+   - Style queries allow you to handle styling exclusively in CSS, making the HTML structure simpler and more focused on semantics rather than presentation. Previously, attributes like `size` or `pill`, `variant` were used to toggle styles, mixing structure with styling.
 
 2. **Reduces Attribute Overload:**
    - Without style queries, you'd need to use attributes for every possible style variation, leading to cluttered HTML. By using CSS properties and style queries, we avoid overloading our HTML with unnecessary attributes.

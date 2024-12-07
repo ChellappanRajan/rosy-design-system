@@ -11,3 +11,4 @@ export * from './lib/table/table';
 export * from './lib/labs/select';
 export * from './lib/avator/avatar-group';
 export * from './lib/avator/avatar';
+export * from './lib/button/button';
