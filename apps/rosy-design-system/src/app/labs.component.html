@@ -7,6 +7,16 @@
  </rosy-avatar-group>
 
 
+ <button (click)="open.set(!open())">open</button>
+
+ {{open()}}
+ @if (open()) {
+ <ry-modal aria-labelledby="title" [open]="open" (close)="open.set(!open())">
+  <ry-moda-header slot="header" id="title">Are you want to cancel?</ry-moda-header>
+  <ry-moda-body slot="body">Are you want to cancel?</ry-moda-body>
+ </ry-modal>
+ }
+
 <!--
  
 <p>

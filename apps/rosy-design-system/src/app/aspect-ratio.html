@@ -1,0 +1,55 @@
+<style>
+      /* Parent container */
+      .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+      resize: both;
+      overflow: auto;
+      margin: 1rem;
+    }
+
+    /* Distorted div */
+    .distorted {
+      height: 100px; /* Fixed height distorts aspect ratio */
+      background-color: coral;
+    }
+
+    /* Aspect ratio preserved div */
+    .aspect-ratio {
+      background-color: lightblue;
+      aspect-ratio: 16 / 9; /* Maintains 16:9 ratio */
+      width: 80%; /* Adjust size as a percentage */
+      max-width: 600px; /* Optional: Limit the max size */
+    }
+    div {
+  width: 100px;
+  height: auto;
+  border: 1px solid black;
+}
+div:nth-child(1) {
+  /* aspect-ratio: 1/1; */
+  aspect-ratio: 16/9;
+
+}
+</style>
+
+
+
+since width has been set to 100px, the height will be 100px as well. The aspect-ratio property is set to 1/1, so the div will maintain a 1:1 aspect ratio. The border is added to show the dimensions of the div.
+
+<div style="overflow: auto;resize: both;border: 1px solid blue; ">
+  <div>1/1</div>
+</div>
+
+<!-- <div class="container" >
+    <div style="margin-right: 20px;">
+      <h3>Distorted</h3>
+      <div class="distorted"></div>
+    </div>
+    <div>
+      <h3>Aspect Ratio</h3>
+      <div class="aspect-ratio"></div>
+    </div>
+  </div> -->

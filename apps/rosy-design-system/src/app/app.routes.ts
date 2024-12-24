@@ -7,4 +7,5 @@ export const appRoutes: Route[] = [
   { path: 'popover', loadComponent: () => import('./popover.component') },
   { path: 'table', loadComponent: () => import('./table.component') },
   { path: 'button', loadComponent: () => import('./button.component') },
+  { path: 'ar', loadComponent: () => import('./aspect-ratio') },
 ];

@@ -2,6 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 import { Avatar } from '@rosy-design-system';
 import { AvatarGroup } from '@rosy-design-system';
 import { SimpleSelect } from '@rosy-design-system';
+import { RosyModal } from '@rosy-design-system';
 @Component({
   standalone: true,
   imports: [],
@@ -68,6 +69,7 @@ import { SimpleSelect } from '@rosy-design-system';
   //   `,
 })
 export default class LabsComponent {
+  open = signal(false);
   imgSrc = [
     'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
     'https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
