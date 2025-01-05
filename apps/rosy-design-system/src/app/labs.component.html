@@ -7,18 +7,50 @@
  </rosy-avatar-group>
 
 
- <button (click)="open.set(!open())">open</button>
 
  {{open()}}
- @if (open()) {
- <ry-modal aria-labelledby="title" [open]="open" (close)="open.set(!open())">
-  <ry-moda-header slot="header" id="title">Are you want to cancel?</ry-moda-header>
-  <ry-moda-body slot="body">Are you want to cancel?</ry-moda-body>
- </ry-modal>
- }
+ <!-- <ry-dialog aria-labelledby="title" [open]="open" (close)="open.set(!open())">
+  <ry-dialog-content>
+    <ry-dialog-header slot="header" id="title">Are you want to cancel?</ry-dialog-header>
+    <ry-dialog-body slot="body">Are you want to cancel?</ry-dialog-body>
+  </ry-dialog-content>
+ </ry-dialog> -->
+
+
+
+ <ry-dialog aria-describedby="description">
+  <ry-dialog-trigger slot="trigger">
+      <button (click)="open.set(!open())">open</button>
+  </ry-dialog-trigger>
+  <ry-dialog-content slot="content">
+    <ry-dialog-header slot="header">
+      <ry-dialog-title slot="title">Edit profile</ry-dialog-title>
+      <ry-dialog-description id="description" slot="description">
+        Make changes to your profile here. Click save when you're done.
+      </ry-dialog-description>
+    </ry-dialog-header>
+    <!-- <div className="grid gap-4 py-4">
+      <div className="grid grid-cols-4 items-center gap-4">
+        <label for="name" className="text-right">
+          Name
+        </label>
+        <input id="name" value="Pedro Duarte" className="col-span-3" />
+      </div>
+      <div className="grid grid-cols-4 items-center gap-4">
+        <label htmlFor="username" className="text-right">
+          Username
+        </label>
+        <input id="username" value="@peduarte" className="col-span-3" />
+      </div>
+    </div>
+    <ry-dialog-footer>
+      <button type="submit">Save changes</button>
+    </ry-dialog-footer> -->
+  </ry-dialog-content>
+</ry-dialog>
 
 <!--
- 
+
 <p>
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus corporis aliquid temporibus culpa perferendis reprehenderit ex? Repudiandae, obcaecati vero accusantium doloribus sed voluptas exercitationem delectus, assumenda fugit enim, distinctio blanditiis.</p>
 

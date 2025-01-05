@@ -12,4 +12,4 @@ export * from './lib/labs/select';
 export * from './lib/avator/avatar-group';
 export * from './lib/avator/avatar';
 export * from './lib/button/button';
-export * from './lib/modal/modal';
+export * from './lib/modal/dialog';
