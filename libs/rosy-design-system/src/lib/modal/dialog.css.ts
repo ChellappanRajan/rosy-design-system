@@ -40,4 +40,7 @@ export const styles = css`
     transition: opacity 0.15s;
     inset: 0;
   }
+  dialog:has(::backdrop) {
+    color: red;
+  }
 `;

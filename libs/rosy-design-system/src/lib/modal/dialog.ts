@@ -53,8 +53,8 @@ export class RosyModalTitle extends LitElement {
         style="
     margin:0;
     margin-bottom: .25rem;
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     line-height: 1.75rem;"
       >
         <slot></slot>
@@ -67,7 +67,7 @@ export class RosyModalDescription extends LitElement {
   protected override render(): unknown {
     this.slot = 'description';
     return html`
-      <p style="font-size: 1rem;padding:0; margin: 0 0 1.5rem;">
+      <p style="color:#020510ab;font-size: 14px;padding:0; margin: 0 0 1.5rem;">
         <slot></slot>
       </p>
     `;
@@ -97,6 +97,13 @@ export class RosyModal extends LitElement {
     const dialog = this.shadowRoot?.querySelector('dialog');
     dialog?.showModal();
     dialog?.focus();
+  }
+
+  constructor() {
+    super();
+    document.addEventListener('mousedown', event => {
+      console.log(this.contains(event.target as any));
+    });
   }
 
   protected override updated(_changedProperties: PropertyValues): void {
