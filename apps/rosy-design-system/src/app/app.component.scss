@@ -83,3 +83,23 @@ gap:1rem;
 --width:100px;
 --height: 100px;
 }
+ul{
+  gap:1rem;
+  height: 56px;
+  display: flex;
+  width: 100vw;
+  background: #edededb8;
+  color: #111;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  & li{
+    list-style-type: none;
+
+  }
+  & a{
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+  }
+}
