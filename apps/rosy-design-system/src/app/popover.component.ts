@@ -1,11 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Popover } from '@rosy-design-system';
 @Component({
-  standalone: true,
-  imports: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  selector: 'app-popover-example',
-  template: `
+    imports: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'app-popover-example',
+    template: `
     <div class="center">
       <select (change)="onChange($event)">
         <option value="">Default(top)</option>
@@ -27,7 +26,7 @@ import { Popover } from '@rosy-design-system';
         title="Hello Test A11y"
       ></rosy-popover>
     </div>
-  `,
+  `
 })
 export default class PopoverExampleComponent {
   position = '';

@@ -7,29 +7,28 @@ import data from "./data.json" with { type: "json" };
 
 
 @Component({
-  selector: 'app-channel-detail',
-  imports: [
-    RouterOutlet,
-    VerifyIconComponent,
-    TickIconComponent,
-    ChevronDownArrowIconComponent,
-    NgClass,
-    BookIconComponent,
-    AddPersonIconComponent,
-    SpeakerPhoneIconComponent,
-    RouterLink,
-    ArrowIconComponent,
-    HashTagIconComponent,
-    HasTagWithSpeechBubbleIconComponent,
-    BellIconComponent,
-    PinIconComponent,
-    PeopleIconComponent,
-    InboxIconComponent,
-    QuestionCircleIconComponent
-],
-  styles: `:host{display:contents}`,
-  template: 
-  ` @let serverData = $currentServer();
+    selector: 'app-channel-detail',
+    imports: [
+        RouterOutlet,
+        VerifyIconComponent,
+        TickIconComponent,
+        ChevronDownArrowIconComponent,
+        NgClass,
+        BookIconComponent,
+        AddPersonIconComponent,
+        SpeakerPhoneIconComponent,
+        RouterLink,
+        ArrowIconComponent,
+        HashTagIconComponent,
+        HasTagWithSpeechBubbleIconComponent,
+        BellIconComponent,
+        PinIconComponent,
+        PeopleIconComponent,
+        InboxIconComponent,
+        QuestionCircleIconComponent
+    ],
+    styles: `:host{display:contents}`,
+    template: ` @let serverData = $currentServer();
 <div class="w-60 bg-gray-800 flex-col flex">
   <div
     class="p-3 h-12 shadow-md w-full text-white text-lg hover:bg-gray-550/[0.16] flex items-center"
@@ -166,8 +165,7 @@ import data from "./data.json" with { type: "json" };
     </p>
   </div>
 </div>
-  `,
-  standalone: true,
+  `
 })
 export default class ChannelDetailsComponent {
   id = input(-1);

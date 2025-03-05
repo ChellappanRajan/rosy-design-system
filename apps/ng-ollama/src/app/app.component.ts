@@ -14,11 +14,10 @@ import { RouterModule } from '@angular/router';
 // const URL = `http://localhost:8080/stream`;
 const URL = `http://localhost:11434/api/generate`;
 @Component({
-  standalone: true,
-  imports: [RouterModule],
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    imports: [RouterModule],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   elementRef = viewChild('ref');

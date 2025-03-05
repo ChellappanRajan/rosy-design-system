@@ -1,12 +1,11 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ShimmerLoader } from '@rosy-design-system';
 @Component({
-  standalone: true,
-  imports: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  selector: 'app-shimmer-example',
-  // templateUrl: './app.component.html',
-  template: `
+    imports: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'app-shimmer-example',
+    // templateUrl: './app.component.html',
+    template: `
     <div class="container roboto-regular">
       <h1>Card Example</h1>
       <div class="flex-row">
@@ -132,7 +131,7 @@ import { ShimmerLoader } from '@rosy-design-system';
         </div>
       </main>
     </section>
-  `,
+  `
 })
 export class SimmerExampleComponent {
   constructor() {

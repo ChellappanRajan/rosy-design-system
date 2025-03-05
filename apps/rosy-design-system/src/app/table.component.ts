@@ -7,11 +7,10 @@ import {
   TableHead,
 } from '@rosy-design-system';
 @Component({
-  standalone: true,
-  imports: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  selector: 'app-table-example',
-  template: `
+    imports: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'app-table-example',
+    template: `
     <div>
       <h1>Basic Table</h1>
 
@@ -82,6 +81,6 @@ import {
       </rosy-table>
     </div>
   `,
-  styles: `rosy-table-cell{border:1px solid grey;}`,
+    styles: `rosy-table-cell{border:1px solid grey;}`
 })
 export default class TableExampleComponent {}

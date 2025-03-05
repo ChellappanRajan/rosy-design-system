@@ -3,11 +3,10 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-navigation-bar',
-  standalone: true,
-  imports: [RouterLink, NgClass],
-  encapsulation: ViewEncapsulation.None,
-  template: `
+    selector: 'app-navigation-bar',
+    imports: [RouterLink, NgClass],
+    encapsulation: ViewEncapsulation.None,
+    template: `
     <a class="group relative " [routerLink]="to()">
       <div
         [ngClass]="{
@@ -54,7 +53,7 @@ import { RouterLink } from '@angular/router';
         </ng-content>
       </div>
     </a>
-  `,
+  `
 })
 export class NavigationBarComponent {
   to = input('');
