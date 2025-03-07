@@ -177,3 +177,35 @@ span{
   padding-left: 1rem
 
 }
+
+@keyframes scale-up {
+  from {
+    background-color: red;
+    transform: scaleX(0);
+  }
+  to {
+    background-color: darkred;
+    transform: scaleX(1);
+  }
+}
+
+// #progressbar {
+//   animation: 2.5s linear forwards scale-up;
+//   animation-timeline: scroll(root block);
+
+// }
+
+@keyframes blur-in {
+  from {
+    border-radius: 0;
+    backdrop-filter: blur(0);
+    background: rgb(30 41 59 / 1);
+    width: 100vw;
+  }
+  to {
+    border-radius: 3rem;
+    backdrop-filter: blur(8px);
+    background: rgb(30 41 59 / 0.75);
+    width: 50vw;
+  }
+}

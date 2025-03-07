@@ -88,11 +88,11 @@ ul{
   height: 56px;
   display: flex;
   width: 100vw;
-  background: #edededb8;
+  // background: #edededb8;
   color: #111;
   justify-content: center;
   align-items: center;
-  border-radius: 3rem;
+
   & li{
     list-style-type: none;
 
@@ -102,4 +102,17 @@ ul{
     color: #111;
     font-weight: 500;
   }
+}
+.header{
+  display: flex;
+  align-items: center;
+}
+header{
+  animation: blur-in linear forwards;
+  position: sticky;
+  overflow: hidden;
+
+  top: 0;
+  animation-timeline: scroll();
+  animation-range: 0 56px;
 }
