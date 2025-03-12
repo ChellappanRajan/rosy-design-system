@@ -1,9 +1,8 @@
 <!-- <div style="position:fixed;top:0;width: 100vw;height: 10px;" id="progressbar"></div> -->
 
-<header >
-    <nav>
-        <ul class="ul">
-            <li   >
+<app-nav>
+
+            <li  >
                 <a  [routerLink]="['/skeleton']" routerLinkActive="router-link-active">Skeleton</a>
 
                 </li>
@@ -22,10 +21,12 @@
             <li>
                 <a  [routerLink]="['/learning']" routerLinkActive="router-link-active">Learning</a>
             </li>
-        </ul>
-    </nav>
-</header>
-<router-outlet></router-outlet>
+</app-nav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
 
 
 

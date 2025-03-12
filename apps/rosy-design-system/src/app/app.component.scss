@@ -83,26 +83,7 @@ gap:1rem;
 --width:100px;
 --height: 100px;
 }
-.ul{
-  gap:1rem;
-  height: 56px;
-  display: flex;
-  width: 100vw;
-  // background: #edededb8;
-  color: #111;
-  justify-content: center;
-  align-items: center;
 
-  & li{
-    list-style-type: none;
-
-  }
-  & a{
-    text-decoration: none;
-    color: #111;
-    font-weight: 500;
-  }
-}
 .header{
   display: flex;
   align-items: center;
@@ -157,3 +138,37 @@ header{
 // }
 // element.style {
 //     margin-top: -220px;}
+
+
+
+
+/*
+  --------MAIN START-------
+*/
+
+main{
+  width: 100vw;
+  padding-top: 100px;
+}
+
+/*
+  --------END-------
+*/
+
+
+
+/*
+  --------START-------
+*/
+
+app-nav{
+  a {
+    text-decoration: inherit;
+    color: black;
+    background: none;
+  }
+}
+
+/*
+  --------END-------
+*/

@@ -6,9 +6,10 @@ import {
 } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { debounce } from './debouce';
-import { GridComponent } from './components/grid.ng';
+import { GridComponent } from './components/grid/grid.ng';
+import { NavComponent } from './components/nav/nav.ng';
 @Component({
-  imports: [RouterOutlet, RouterLink, GridComponent],
+  imports: [RouterOutlet, RouterLink, GridComponent, NavComponent],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-root',

@@ -163,6 +163,7 @@ gap:1rem;
 }
 body,*{
   font-family: "Geist", serif;
+
   // font-optical-sizing: auto;
   // font-weight: normal;
   // font-style: normal;
@@ -211,9 +212,7 @@ span{
 }
 
 app-learning{
-  background-color: #e9eef6;
-  width: 100vw;
-  height: calc(100vh - 56px);
+
   display: flex;
   align-items: center;
   justify-content: center;
