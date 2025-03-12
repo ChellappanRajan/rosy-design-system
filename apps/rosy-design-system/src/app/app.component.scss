@@ -83,7 +83,7 @@ gap:1rem;
 --width:100px;
 --height: 100px;
 }
-ul{
+.ul{
   gap:1rem;
   height: 56px;
   display: flex;
@@ -116,3 +116,44 @@ header{
   animation-timeline: scroll();
   animation-range: 0 56px;
 }
+
+#counter {
+  height: 20px;
+    line-height: 20px;
+    display: flex
+;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+#counter ul{
+  margin-top: -220px;
+    display: inline;
+  transform: translateY(220px);
+}
+// {
+// transform: translateY(-60px);
+// }
+// element.style {
+//     margin-top: -260px;
+// }
+
+// transform: translateY(-20px);
+// }
+// element.style {
+//     margin-top: 0px;}
+
+
+// }
+
+//     transform: translateY(-200px);
+//   }
+//   element.style {
+//       margin-top: -220px;}
+
+//   }
+
+//   transform: translateY(0px);
+// }
+// element.style {
+//     margin-top: -220px;}

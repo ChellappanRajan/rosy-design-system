@@ -1,0 +1,30 @@
+.container{
+  display: grid;
+  width: 500px;
+  height: 300px;
+  gap:2px;
+  overflow: hidden;
+  border-radius: 30px;
+  grid-template-columns: 240px 93fr 93fr;
+  & img{
+    height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+}
+.box-1{
+  grid-row: span 2;
+}
+.box-4{
+  grid-column: span 2;
+  background-color: yellow;
+}
+
+:is(.box-1,.box-2, .box-3, .box-4){
+  overflow: hidden;
+}
+
+img:hover{
+  transition: transform 200ms;
+  transform: scale(1.5);
+}

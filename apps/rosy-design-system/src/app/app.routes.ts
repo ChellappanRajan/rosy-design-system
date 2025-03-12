@@ -8,4 +8,5 @@ export const appRoutes: Route[] = [
   { path: 'table', loadComponent: () => import('./table.component') },
   { path: 'button', loadComponent: () => import('./button.component') },
   { path: 'ar', loadComponent: () => import('./aspect-ratio') },
+  { path: 'learning', loadComponent: () => import('./learning.ng') },
 ];

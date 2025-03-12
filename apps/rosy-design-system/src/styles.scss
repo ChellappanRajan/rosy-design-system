@@ -209,3 +209,12 @@ span{
     width: 50vw;
   }
 }
+
+app-learning{
+  background-color: #e9eef6;
+  width: 100vw;
+  height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

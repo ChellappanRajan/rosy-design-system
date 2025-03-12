@@ -6,8 +6,9 @@ import {
 } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { debounce } from './debouce';
+import { GridComponent } from './components/grid.ng';
 @Component({
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, GridComponent],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-root',
@@ -23,6 +24,11 @@ export class AppComponent {
   @HostListener('document:mousemove', ['$event']) onMouseMove(e: MouseEvent) {
     // console.log('with debounce mousemove');
     this.d(new CustomEvent('mousemove'));
+  }
+
+  constructor() {
+    const formatter = new Intl.NumberFormat('en-IN');
+    console.log(formatter.format(123456789));
   }
 
   // onSecondLevel() {
