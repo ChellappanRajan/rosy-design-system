@@ -9,7 +9,7 @@ import { debounce } from './debouce';
 import { GridComponent } from './components/grid/grid.ng';
 import { NavComponent } from './components/nav/nav.ng';
 @Component({
-  imports: [RouterOutlet, RouterLink, GridComponent, NavComponent],
+  imports: [RouterOutlet, RouterLink, NavComponent],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   selector: 'app-root',

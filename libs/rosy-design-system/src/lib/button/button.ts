@@ -1,4 +1,7 @@
-import { html, LitElement, nothing } from 'lit';
+import { LitElement, nothing, PropertyValues } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { classMap } from 'lit/directives/class-map.js';
+
 import {
   customElement,
   property,
@@ -7,8 +10,10 @@ import {
   state,
 } from 'lit/decorators.js';
 import { styles } from './button.css';
+import { html, literal, unsafeStatic } from 'lit/static-html.js';
 
 @customElement('rosy-button')
+//Try to add type for href
 export class RosyButton extends LitElement implements HTMLButtonElement {
   disabled!: boolean;
   // static override shadowRootOptions: ShadowRootInit = {...LitElement.shadowRootOptions,delegatesFocus:true};
@@ -38,11 +43,36 @@ export class RosyButton extends LitElement implements HTMLButtonElement {
   popoverTargetElement!: Element | null;
   static override styles = styles;
 
+  @property({ type: String }) accessor as: string = 'button';
+  @property({ type: String }) accessor href: string | undefined;
+
+  #tag = literal`button`;
+  #tagType = 'button';
+
+  // protected override createRenderRoot(): HTMLElement | DocumentFragment {
+  //     return this
+  // }
+
+  protected override willUpdate(_changedProperties: PropertyValues): void {
+    super.willUpdate(_changedProperties);
+    if (_changedProperties.has('as')) {
+      this.#tag = literal`${unsafeStatic(this.as)}`;
+      this.#tagType = this.as;
+      //  const ifDefined =  customElements.get(this.#tag._$litStatic$);
+      //  console.log(ifDefined);
+    }
+  }
+
   override render() {
+    const classes = classMap({
+      'ry-button': true,
+      link: this.#tagType === 'a',
+    });
+
     return html`
-      <button class="ggr-button">
+      <${this.#tag} href=${ifDefined(this.href)} class=${classes}>
         <slot></slot>
-      </button>
+      </${this.#tag}>
     `;
   }
 }
