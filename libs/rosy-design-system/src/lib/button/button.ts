@@ -12,7 +12,7 @@ import {
 import { styles } from './button.css';
 import { html, literal, unsafeStatic } from 'lit/static-html.js';
 
-@customElement('rosy-button')
+@customElement('ry-button')
 //Try to add type for href
 export class RosyButton extends LitElement implements HTMLButtonElement {
   disabled!: boolean;
@@ -28,7 +28,6 @@ export class RosyButton extends LitElement implements HTMLButtonElement {
   type!: 'submit' | 'reset' | 'button';
   validationMessage!: string;
   validity!: ValidityState;
-  value!: string;
   willValidate!: boolean;
   checkValidity(): boolean {
     throw new Error('Method not implemented.');
@@ -42,12 +41,17 @@ export class RosyButton extends LitElement implements HTMLButtonElement {
   popoverTargetAction!: string;
   popoverTargetElement!: Element | null;
   static override styles = styles;
-
-  @property({ type: String }) accessor as: string = 'button';
+  static formAssociated = true;
+  @property({ type: String }) accessor as: 'button' | 'input' | 'a' = 'button';
   @property({ type: String }) accessor href: string | undefined;
-
+  @property({ type: String }) accessor value: string = '';
   #tag = literal`button`;
   #tagType = 'button';
+  internals!: ElementInternals;
+
+  constructor() {
+    super();
+  }
 
   // protected override createRenderRoot(): HTMLElement | DocumentFragment {
   //     return this
@@ -64,13 +68,18 @@ export class RosyButton extends LitElement implements HTMLButtonElement {
   }
 
   override render() {
+    const isLink = this.#tagType === 'a';
     const classes = classMap({
       'ry-button': true,
       link: this.#tagType === 'a',
     });
 
+    if (this.#tagType === 'input') {
+      return html`<input type="button" value=${this.value} class=${classes} />`;
+    }
+
     return html`
-      <${this.#tag} href=${ifDefined(this.href)} class=${classes}>
+      <${this.#tag} href=${ifDefined(this.href)} class=${classes} >
         <slot></slot>
       </${this.#tag}>
     `;

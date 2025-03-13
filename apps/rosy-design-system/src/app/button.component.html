@@ -6,4 +6,49 @@
   </select>
 
 <rosy-button [style.--variant]="variant"  (click)="onClick($event)">Add</rosy-button>
+<style>
 
+.button-container{
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  // grid-template-columns: repeat(1,minmax(0,100%));
+  margin-top: 1rem;
+> *
+  {
+    display: flex;
+    gap: 1rem;
+  }
+
+}
+
+
+</style>
+<div class="button-container">
+
+
+  <h1>Button Variants</h1>
+  <h2>As Anchor Tag</h2>
+ <div class="anchor-button-container">
+  <ry-button as="a" href="#hell" style="--variant:primary">Primary</ry-button>
+  <ry-button as="a" href="#hell" style="--variant:secondary">Secondary</ry-button>
+  <ry-button as="a" href="#hell" style="--variant:danger">Danger</ry-button>
+  <ry-button as="a" href="#hell" style="--variant:link">Link</ry-button>
+ </div>
+
+  <h2>As Button Tag</h2>
+ <div style="--ry-button-radius:9999px;">
+  <ry-button as="button" href="#hell" style="--variant:primary">Primary</ry-button>
+  <ry-button as="button" href="#hell" style="--variant:secondary">Secondary</ry-button>
+  <ry-button as="button" href="#hell" style="--variant:danger">Danger</ry-button>
+  <ry-button as="button" href="#hell" style="--variant:link">Link</ry-button>
+ </div>
+  <h2>As Button Tag</h2>
+ <div style="--ry-button-radius:9999px;">
+  <ry-button as="input" href="#hell" style="--variant:primary" value="Primary"></ry-button>
+  <ry-button as="input" href="#hell" style="--variant:secondary" value="Secondary"></ry-button>
+  <ry-button as="input" href="#hell" style="--variant:danger" value="Danger"></ry-button>
+  <ry-button as="input" href="#hell" style="--variant:link" value="link" ></ry-button>
+ </div>
+
+</div>
