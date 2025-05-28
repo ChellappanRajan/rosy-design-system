@@ -49,10 +49,6 @@ export class RosyButton extends LitElement implements HTMLButtonElement {
   #tagType = 'button';
   internals!: ElementInternals;
 
-  constructor() {
-    super();
-  }
-
   // protected override createRenderRoot(): HTMLElement | DocumentFragment {
   //     return this
   // }
@@ -62,8 +58,6 @@ export class RosyButton extends LitElement implements HTMLButtonElement {
     if (_changedProperties.has('as')) {
       this.#tag = literal`${unsafeStatic(this.as)}`;
       this.#tagType = this.as;
-      //  const ifDefined =  customElements.get(this.#tag._$litStatic$);
-      //  console.log(ifDefined);
     }
   }
 

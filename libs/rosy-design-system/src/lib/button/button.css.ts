@@ -43,8 +43,8 @@ export const styles = css`
 
   @container style(--variant:primary) {
     .ry-button {
-      --_bg-color: #111;
-      --font-color: #fff;
+      --_bg-color: #ffa725;
+      --font-color: #fff5e4;
     }
   }
   @container style(--variant:secondary) {
@@ -70,3 +70,7 @@ export const styles = css`
     }
   }
 `;
+
+// https://colorhunt.co/palette/ffa725fff5e4c1d8c36a9c89
+
+// We should add color palats if user choose color pallate and generate it should show component based on selected color pallates

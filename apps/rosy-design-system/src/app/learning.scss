@@ -1,0 +1,133 @@
+.component {
+  place-self: center;
+  padding: 0.5em;
+  font: clamp(0.625em, 5vw, 1.125em) monospace;
+}
+
+* {
+  --hl: 0;
+  --sel: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+div,
+ul,
+.visual-item,
+.ico {
+  display: grid;
+}
+
+/* when there's better :has() support,
+ * replace selector with :has(> .visual-item) */
+.component,
+[id*='menu'] {
+  grid-gap: 0.5em;
+}
+
+div,
+ul {
+  transform-style: preserve-3d;
+}
+
+.component {
+  place-self: center;
+  padding: 0.5em;
+  font: clamp(0.625em, 5vw, 1.125em) monospace;
+}
+
+[aria-expanded],
+[id*='menu'] {
+  --hid: 0;
+}
+
+[aria-expanded='false'],
+[id*='menu'][inert] {
+  --hid: 1;
+}
+
+button {
+  --highlight: 0 0 calc(var(--hl) * 7px) hsl(180, 90%, 50%);
+  box-shadow: var(--highlight);
+}
+button[disabled] {
+  opacity: 0.375;
+}
+button:focus {
+  outline: none;
+}
+button:not([disabled]) {
+  cursor: pointer;
+}
+button:not([disabled]):is(:focus, :hover) {
+  --hl: 1;
+}
+
+:not(li) > .toggler::after {
+  width: 0.625em;
+  aspect-ratio: 1;
+  border: solid 0 currentcolor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(calc(45deg - var(--hid) * 90deg));
+  transition: inherit;
+  content: '';
+}
+
+.toggler[aria-expanded='true'] {
+  --sel: 1;
+}
+
+.visual-item {
+  --m: calc(0.5 * var(--n));
+  --dif: calc(var(--m) - var(--i) - 1);
+  grid-gap: 1.5em;
+  grid-template-columns: -webkit-max-content min(12.5em, 20vw) -webkit-max-content;
+  grid-template-columns: max-content min(12.5em, 20vw) max-content;
+  align-items: center;
+  overflow: hidden;
+  padding: 1em;
+  border-radius: 0.5rem;
+  transform: translate3d(
+    0,
+    calc(var(--hid) * var(--dif) * (100% + 0.5em)),
+    calc(var(--hid) * (var(--i) + 1) * -2.5em)
+  );
+  --cast-back: 0 -1px 1px -1px hsla(0, 0%, 0%, 0.145),
+    0 -2px 2px -2px hsla(0, 0%, 0%, 0.137),
+    0 -6px 6px -3px hsla(0, 0%, 0%, 0.118),
+    0 -20px 20px -4px hsla(0, 0%, 0%, 0.05);
+  box-shadow: var(--cast-back);
+  background: #222;
+  color: hsl(180, 90%, calc(100% - var(--sel) * 50%));
+  text-transform: uppercase;
+  filter: brightness(calc(1 - (var(--i) + 1) * var(--hid) * 0.1));
+}
+.visual-item .ico {
+  place-content: center;
+  width: 2em;
+  aspect-ratio: 1;
+  border-radius: inherit;
+  background: #141414;
+  font-size: 1.5em;
+  filter: saturate(0);
+}
+.visual-item > .toggler {
+  font-size: 2em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .visual-item {
+    transition: 0.375s cubic-bezier(0.35, 1.35, 0.65, 1);
+  }
+}
+
+button.visual-item {
+  --i: -1;
+  z-index: 1;
+  /* Safari bugginess fix */
+  box-shadow: var(--highlight), var(--cast-back);
+}

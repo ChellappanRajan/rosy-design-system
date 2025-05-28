@@ -1,13 +1,16 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, model } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { RosyButton } from '@rosy-design-system';
 @Component({
-    imports: [RouterOutlet, RouterLink],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    selector: 'app-button-example',
-    templateUrl: './button.component.html'
+  imports: [RouterOutlet, RouterLink, FormsModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  selector: 'app-button-example',
+  templateUrl: './button.component.html',
 })
 export default class ButtonExampleComponent {
+  bakgroundColor = model();
+  fontColor = model();
   constructor() {
     console.log(RosyButton);
   }

@@ -24,12 +24,25 @@
 
 
 </style>
+
+<div>
+  <label for="favcolor">Select your favorite Font Color:</label>
+<input type="color" id="favcolor" [(ngModel)]="bakgroundColor" name="favcolor" value="#ff0000">
+</div>
+
+<div>
+  <label for="favcolor">Select your favorite Background Color:</label>
+<input type="color" id="favcolor" [(ngModel)]="fontColor" name="favcolor" value="#ff0000">
+</div>
+
+
+
 <div class="button-container">
 
 
   <h1>Button Variants</h1>
   <h2>As Anchor Tag</h2>
- <div class="anchor-button-container">
+ <div class="anchor-button-container" >
   <ry-button as="a" href="#hell" style="--variant:primary">Primary</ry-button>
   <ry-button as="a" href="#hell" style="--variant:secondary">Secondary</ry-button>
   <ry-button as="a" href="#hell" style="--variant:danger">Danger</ry-button>
