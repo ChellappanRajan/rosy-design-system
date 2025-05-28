@@ -1,0 +1,10 @@
+{
+  "name": "build-ui-learn-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/build-ui-learn-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["build-ui-learn"],
+  "// targets": "to see all targets run: nx show project build-ui-learn-e2e --web",
+  "targets": {}
+}
